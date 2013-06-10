@@ -20,6 +20,12 @@ namespace XnaEt
         int animation_speed = 4;
         int animation_count = 0;
 
+        bool freezeeVertical = false;
+        bool freezeHorizontal = false;
+        bool flightMode = false;
+        bool inPit = false;
+        bool flightReverse = false;
+
         Point frameSize = new Point(33,30);
         Point currentFrame = new Point (0,0);
 
@@ -52,13 +58,24 @@ namespace XnaEt
             sb = new SpriteBatch(GraphicsDevice);
             links = Game.Content.Load<Texture2D>("left-run");
             rechts = Game.Content.Load<Texture2D>("right-run");
+
+            left_neck_up = Game.Content.Load<Texture2D>("links");
+            right_neck_up = Game.Content.Load<Texture2D>("right-neck-up");
+
             texture = links;
         }
 
         public override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
-            texture = links;
+            if (!this.flightMode)
+                texture = links;
+            else
+            {
+                
+                texture = left_neck_up;
+                this.flightAnimate();
+            }
         }
 
         public override void Draw(GameTime gameTime)
@@ -83,53 +100,65 @@ namespace XnaEt
 
         public void moveUp()
         {
-            int speed = (Keyboard.GetState().IsKeyDown(Keys.LeftControl)) ? 3 : 1;
-
-            
-
-            for (int i = 0; i < speed; i++)
+            if (!this.freezeeVertical)
             {
-                pos.Y--;
-                energy--;
+                int speed = (Keyboard.GetState().IsKeyDown(Keys.LeftControl)) ? 3 : 1;
+
+                for (int i = 0; i < speed; i++)
+                {
+                    pos.Y--;
+                    energy--;
+                }
             }
         }
 
         public void moveLeft()
         {
-            int speed = (Keyboard.GetState().IsKeyDown(Keys.LeftControl)) ? 3 : 1;
-            texture = links;
-
-            this.animate();
-
-            for (int i = 0; i < speed; i++)
+            if (!this.freezeHorizontal)
             {
-                pos.X--;
-                energy--;
+                int speed = (Keyboard.GetState().IsKeyDown(Keys.LeftControl)) ? 3 : 1;
+                texture = links;
+
+                this.animate(1);
+                frameSize.Y = 30;
+
+                for (int i = 0; i < speed; i++)
+                {
+                    pos.X--;
+                    energy--;
+                }
             }
         }
 
         public void moveRight()
         {
-            int speed = (Keyboard.GetState().IsKeyDown(Keys.LeftControl)) ? 3 : 1;
-            texture = rechts;
-
-            this.animate();
-
-            for (int i = 0; i < speed; i++)
+            if (!this.freezeHorizontal)
             {
-                pos.X++;
-                energy--;
+                int speed = (Keyboard.GetState().IsKeyDown(Keys.LeftControl)) ? 3 : 1;
+                texture = rechts;
+
+                this.animate(1);
+                frameSize.Y = 30;
+
+                for (int i = 0; i < speed; i++)
+                {
+                    pos.X++;
+                    energy--;
+                }
             }
         }
 
         public void moveDown()
         {
-            int speed = (Keyboard.GetState().IsKeyDown(Keys.LeftControl)) ? 3 : 1;
-
-            for (int i = 0; i < speed; i++)
+            if (!this.freezeeVertical)
             {
-                pos.Y++;
-                energy--;
+                int speed = (Keyboard.GetState().IsKeyDown(Keys.LeftControl)) ? 3 : 1;
+
+                for (int i = 0; i < speed; i++)
+                {
+                    pos.Y++;
+                    energy--;
+                }
             }
         }
 
@@ -138,13 +167,62 @@ namespace XnaEt
             return energy;
         }
 
-        private void animate()
+        private void animate(int max_step)
         {
             if (animation_count++ % animation_speed == 0)
             {
-                if (currentFrame.X++ > 1)
+                if (currentFrame.X++ > max_step)
                     currentFrame.X = 0;
             }
+        }
+
+        private void flightAnimate()
+        {
+            if (animation_count++ % 6 == 0)
+            {
+                if (!this.flightReverse && currentFrame.X > 4) 
+                {
+                    if(!this.inPit)
+                        this.flightReverse = true;
+                }
+                else
+                {
+                    if(!this.flightReverse)
+                        currentFrame.X++;
+                }
+
+                if (this.flightReverse && currentFrame.X == 0)
+                {
+                    // Finished with animation
+                    this.freezeeVertical = false;
+                    this.freezeHorizontal = false;
+                    this.flightMode = false;
+
+                    frameSize.Y = 30;
+                    flightReverse = false;
+                    this.pos.Y = this.pos.Y + 16;
+                }
+                else
+                {
+                    // Count down if it neccesarry
+                    if(this.flightReverse)
+                        currentFrame.X--;
+                }
+            }
+        }
+
+        public void setFlightMode(bool inPit)
+        {
+            this.freezeeVertical = true;
+            this.freezeHorizontal = true;
+            this.flightMode = true;
+            this.inPit = inPit;
+            
+            this.currentFrame.X = 0;
+
+            this.pos.Y = this.pos.Y - 3;
+            texture = left_neck_up;
+            this.frameSize.Y = 46;
         }
     }
 }

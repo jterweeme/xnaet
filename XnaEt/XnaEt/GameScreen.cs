@@ -96,6 +96,9 @@ namespace XnaEt
             if (kb.IsKeyDown(Keys.Down))
                 player.moveDown();
 
+            if (kb.IsKeyDown(Keys.LeftControl) && kb.GetPressedKeys().Length == 1)
+                player.setFlightMode(false);
+
             if (player.getPos().Y < 50)
                 goNorth();
 
