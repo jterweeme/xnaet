@@ -7,10 +7,23 @@ namespace XnaEt
     public class Player : DrawableGameComponent
     {
         Texture2D texture;
+
         Texture2D links;
         Texture2D rechts;
+
+        Texture2D left_neck_up;
+        Texture2D right_neck_up;
+
         SpriteBatch sb;
         Point pos;
+
+        int animation_speed = 4;
+        int animation_count = 0;
+
+        Point frameSize = new Point(33,30);
+        Point currentFrame = new Point (0,0);
+
+
         public Point Position
         {
             get
@@ -22,6 +35,7 @@ namespace XnaEt
                 pos = value;
             }
         }
+
         int energy;
 
         public Player()
@@ -36,8 +50,8 @@ namespace XnaEt
         {
             base.LoadContent();
             sb = new SpriteBatch(GraphicsDevice);
-            links = Game.Content.Load<Texture2D>("links");
-            rechts = Game.Content.Load<Texture2D>("rechts");
+            links = Game.Content.Load<Texture2D>("left-run");
+            rechts = Game.Content.Load<Texture2D>("right-run");
             texture = links;
         }
 
@@ -51,7 +65,14 @@ namespace XnaEt
         {
             base.Draw(gameTime);
             sb.Begin();
-            sb.Draw(texture, new Rectangle(pos.X, pos.Y, 32, 30), Color.White);
+            //sb.Draw(texture, new Rectangle(pos.X, pos.Y, 32, 30), Color.White);
+            //sb.Draw(
+            sb.Draw(texture, new Vector2(pos.X, pos.Y), new Rectangle(
+                    frameSize.X * currentFrame.X,
+                    frameSize.Y * currentFrame.Y,
+                    frameSize.X,
+                    frameSize.Y),
+                    Color.White, 0, Vector2.Zero, 1, SpriteEffects.None, 0);
             sb.End();
         }
 
@@ -64,6 +85,8 @@ namespace XnaEt
         {
             int speed = (Keyboard.GetState().IsKeyDown(Keys.LeftControl)) ? 3 : 1;
 
+            
+
             for (int i = 0; i < speed; i++)
             {
                 pos.Y--;
@@ -74,6 +97,9 @@ namespace XnaEt
         public void moveLeft()
         {
             int speed = (Keyboard.GetState().IsKeyDown(Keys.LeftControl)) ? 3 : 1;
+            texture = links;
+
+            this.animate();
 
             for (int i = 0; i < speed; i++)
             {
@@ -86,6 +112,8 @@ namespace XnaEt
         {
             int speed = (Keyboard.GetState().IsKeyDown(Keys.LeftControl)) ? 3 : 1;
             texture = rechts;
+
+            this.animate();
 
             for (int i = 0; i < speed; i++)
             {
@@ -108,6 +136,15 @@ namespace XnaEt
         public int getEnergy()
         {
             return energy;
+        }
+
+        private void animate()
+        {
+            if (animation_count++ % animation_speed == 0)
+            {
+                if (currentFrame.X++ > 1)
+                    currentFrame.X = 0;
+            }
         }
     }
 }
