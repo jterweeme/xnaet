@@ -215,15 +215,19 @@ namespace XnaEt
         {
             this.inPit = inPit;
 
-            this.currentFrame.X = 0;
+            if (!flightMode)
+            {
+                this.currentFrame.X = 0;
 
-            texture = left_neck_up;
-            this.frameSize.Y = 46;
+                texture = left_neck_up;
+                this.frameSize.Y = 46;
 
-            this.freezeeVertical = true;
-            this.freezeHorizontal = true;
-            this.flightMode = true;
+                this.pos.Y -= 16;
 
+                this.freezeeVertical = true;
+                this.freezeHorizontal = true;
+                this.flightMode = true;
+            }
         }
     }
 }
