@@ -213,16 +213,17 @@ namespace XnaEt
 
         public void setFlightMode(bool inPit)
         {
+            this.inPit = inPit;
+
+            this.currentFrame.X = 0;
+
+            texture = left_neck_up;
+            this.frameSize.Y = 46;
+
             this.freezeeVertical = true;
             this.freezeHorizontal = true;
             this.flightMode = true;
-            this.inPit = inPit;
-            
-            this.currentFrame.X = 0;
 
-            this.pos.Y = this.pos.Y - 3;
-            texture = left_neck_up;
-            this.frameSize.Y = 46;
         }
     }
 }
