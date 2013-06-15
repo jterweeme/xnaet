@@ -13,26 +13,23 @@ namespace XnaEt
         {
             base.LoadContent();
             EtGame.instanz.CurrentScreen.setBgColor(new Color(0, 64, 0));
+            background.SetData(new Color[] { Color.Red });
         }
 
         public override Pit getNorth()
-        {
-            return new TarPit();
+        {   return new TarPit();
         }
 
         public override Pit getWest()
-        {
-            return new OlivePit();
+        {   return new OlivePit();
         }
 
         public override Pit getEast()
-        {
-            return new SnakePit();
+        {   return new SnakePit();
         }
 
         public override Pit getSouth()
-        {
-            return new FlowerPit();
+        {   return new FlowerPit();
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿namespace XnaEt
+﻿using Microsoft.Xna.Framework;
+namespace XnaEt
 {
     public class SnakePit : Pit
     {
@@ -7,24 +8,27 @@
         {
         }
 
-        public override Pit getNorth()
+        protected override void LoadContent()
         {
-            return new Forest();
+            base.LoadContent();
+            EtGame.instanz.CurrentScreen.setBgColor(new Color(0, 64, 0));
+            background.SetData(new Color[] { Color.Green });
+        }
+
+        public override Pit getNorth()
+        {   return new Forest();
         }
 
         public override Pit getWest()
-        {
-            return new FlowerPit();
+        {   return new FlowerPit();
         }
 
         public override Pit getEast()
-        {
-            return new TarPit();
+        {   return new TarPit();
         }
 
         public override Pit getSouth()
-        {
-            return new City();
+        {   return new City();
         }
     }
 }
