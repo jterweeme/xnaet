@@ -20,7 +20,7 @@ namespace XnaEt
         {
             base.Draw(gameTime);
             sb.Begin();
-            sb.Draw(texture, new Rectangle(400, 250, 48, 48), Color.White);
+            sb.Draw(texture, new Rectangle(400, 250, 89, 89), Color.White);
             sb.End();
         }
     }

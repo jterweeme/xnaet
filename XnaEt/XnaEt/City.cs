@@ -12,7 +12,7 @@ namespace XnaEt
         {
             base.LoadContent();
             EtGame.instanz.CurrentScreen.setBgColor(new Color(0, 0, 96));
-            background.SetData(new Color[] { Color.Cyan });
+            background.SetData(new Color[] { new Color(45, 50, 184) });
         }
 
         public override Pit getNorth()
