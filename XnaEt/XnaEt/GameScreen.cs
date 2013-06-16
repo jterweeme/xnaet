@@ -85,7 +85,12 @@ namespace XnaEt
             KeyboardState kb = Keyboard.GetState();
 
             if (kb.IsKeyDown(Keys.Up))
+            {
                 player.moveUp();
+
+                if (currentPit.checkCollision(player.getPos()))
+                    System.Console.WriteLine("Collission!");
+            }
 
             if (kb.IsKeyDown(Keys.Left))
                 player.moveLeft();
@@ -99,16 +104,16 @@ namespace XnaEt
             if (kb.IsKeyDown(Keys.LeftControl) && kb.GetPressedKeys().Length == 1)
                 player.setFlightMode(false);
 
-            if (player.getPos().Y < 50)
+            if (player.getPos().Y < 5)
                 goNorth();
 
-            if (player.getPos().X < 64)
+            if (player.getPos().X < 5)
                 goWest();
 
-            if (player.getPos().X > 576)
+            if (player.getPos().X > 470)
                 goEast();
 
-            if (player.getPos().Y > 310)
+            if (player.getPos().Y > 240)
                 goSouth();
         }
     }

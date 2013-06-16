@@ -40,5 +40,13 @@ namespace XnaEt
             sb.Draw(dinges, new Rectangle(64, 58, 512, 260), Color.White);
             sb.End();
         }
+
+        public virtual bool checkCollision(Point pos)
+        {
+            Color[] retrievedColor = new Color[700 * 500];
+            Rectangle positie = new Rectangle(pos.X, pos.Y, 1, 1);
+            dinges.GetData<Color>(0, positie, retrievedColor, 0, 1);
+            return retrievedColor[0].A > 100;
+        }
     }
 }

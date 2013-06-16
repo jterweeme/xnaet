@@ -82,9 +82,7 @@ namespace XnaEt
         {
             base.Draw(gameTime);
             sb.Begin();
-            //sb.Draw(texture, new Rectangle(pos.X, pos.Y, 32, 30), Color.White);
-            //sb.Draw(
-            sb.Draw(texture, new Vector2(pos.X, pos.Y), new Rectangle(
+            sb.Draw(texture, new Vector2(pos.X + 64, pos.Y + 50), new Rectangle(
                     frameSize.X * currentFrame.X,
                     frameSize.Y * currentFrame.Y,
                     frameSize.X,

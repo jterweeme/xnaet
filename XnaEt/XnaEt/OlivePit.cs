@@ -31,6 +31,16 @@ namespace XnaEt
         public override Pit getSouth()
         {   return new City();
         }
+
+        public override bool checkCollision(Point pos)
+        {
+            bool result = base.checkCollision(pos);
+
+            if (result)
+                System.Console.WriteLine("Dinges");
+
+            return false;
+        }
     }
 
 
