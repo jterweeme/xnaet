@@ -32,16 +32,12 @@ namespace XnaEt
         {   return new City();
         }
 
+        public override Pit getPitFall()
+        {   return new PitFall(this);
+        }
+
         public override bool checkCollision(Point pos)
-        {
-            bool result = base.checkCollision(pos);
-
-            if (result)
-                System.Console.WriteLine("Dinges");
-
-            return false;
+        {   return (checkCollision2(pos));
         }
     }
-
-
 }

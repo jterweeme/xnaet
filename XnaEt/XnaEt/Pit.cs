@@ -31,6 +31,7 @@ namespace XnaEt
         public abstract Pit getWest();
         public abstract Pit getEast();
         public abstract Pit getSouth();
+        public abstract Pit getPitFall();
 
         public override void Draw(GameTime gameTime)
         {
@@ -42,6 +43,11 @@ namespace XnaEt
         }
 
         public virtual bool checkCollision(Point pos)
+        {
+            return false;
+        }
+
+        protected bool checkCollision2(Point pos)
         {
             Color[] retrievedColor = new Color[700 * 500];
             Rectangle positie = new Rectangle(pos.X, pos.Y, 1, 1);

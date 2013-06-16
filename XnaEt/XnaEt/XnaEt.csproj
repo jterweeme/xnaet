@@ -121,6 +121,7 @@
     <Compile Include="Header.cs" />
     <Compile Include="OlivePit.cs" />
     <Compile Include="Pit.cs" />
+    <Compile Include="PitFall.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="EtGame.cs" />

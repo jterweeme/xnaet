@@ -31,5 +31,10 @@ namespace XnaEt
         public override Pit getSouth()
         {   return new FlowerPit();
         }
+
+        public override Pit getPitFall()
+        {
+            return new PitFall(this);
+        }
     }
 }

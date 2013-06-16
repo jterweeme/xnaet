@@ -51,28 +51,34 @@ namespace XnaEt
             EtGame.instanz.Components.Add(scientist);
         }
 
-        public void goNorth()
+        private void goNorth()
         {
             CurrentPit = currentPit.getNorth();
             player.Position = new Point(300, 200);
         }
 
-        public void goWest()
+        private void goWest()
         {
             CurrentPit = currentPit.getWest();
             player.Position = new Point(300, 200);
         }
 
-        public void goEast()
+        private void goEast()
         {
             CurrentPit = currentPit.getEast();
             player.Position = new Point(300, 200);
         }
 
-        public void goSouth()
+        private void goSouth()
         {
             CurrentPit = currentPit.getSouth();
             player.Position = new Point(300, 200);
+        }
+
+        public void goPitFall()
+        {
+            CurrentPit = currentPit.getPitFall();
+            //System.Console.WriteLine("Pitfall!");
         }
 
         public override void Update(GameTime gameTime)
@@ -89,17 +95,32 @@ namespace XnaEt
                 player.moveUp();
 
                 if (currentPit.checkCollision(player.getPos()))
-                    System.Console.WriteLine("Collission!");
+                    goPitFall();
             }
 
             if (kb.IsKeyDown(Keys.Left))
+            {
                 player.moveLeft();
 
+                if (currentPit.checkCollision(player.getPos()))
+                    goPitFall();
+            }
+
             if (kb.IsKeyDown(Keys.Right))
+            {
                 player.moveRight();
 
+                if (currentPit.checkCollision(player.getPos()))
+                    goPitFall();
+            }
+
             if (kb.IsKeyDown(Keys.Down))
+            {
                 player.moveDown();
+
+                if (currentPit.checkCollision(player.getPos()))
+                    goPitFall();
+            }
 
             if (kb.IsKeyDown(Keys.LeftControl) && kb.GetPressedKeys().Length == 1)
                 player.setFlightMode(false);
