@@ -21,7 +21,8 @@ namespace XnaEt
         }
 
         public override Pit getWest()
-        {   return new OlivePit();
+        {
+            return new OlivePit();
         }
 
         public override Pit getEast()
@@ -35,6 +36,11 @@ namespace XnaEt
         public override Pit getPitFall()
         {
             return new PitFall(this);
+        }
+
+        public override int getZone()
+        {
+            return 1;
         }
     }
 }

@@ -23,12 +23,17 @@ namespace XnaEt
             sb = new SpriteBatch(GraphicsDevice);
             bgcolor = new Texture2D(GraphicsDevice, 1, 1);
             bgcolor.SetData(new Color[] { Color.Purple });
-
             zones.Add(Game.Content.Load<Texture2D>("zoneTitle"));
             zones.Add(Game.Content.Load<Texture2D>("zoneCandyMunching"));
             zones.Add(Game.Content.Load<Texture2D>("zoneHumanRepellant"));
             zones.Add(Game.Content.Load<Texture2D>("zoneCallship"));
             zones.Add(Game.Content.Load<Texture2D>("zoneLanding"));
+            zones.Add(Game.Content.Load<Texture2D>("zoneUp"));
+            zones.Add(Game.Content.Load<Texture2D>("zoneLeft"));
+            zones.Add(Game.Content.Load<Texture2D>("zoneRight"));
+            zones.Add(Game.Content.Load<Texture2D>("zoneDown"));
+            zones.Add(Game.Content.Load<Texture2D>("zoneCallEliot"));
+            zones.Add(Game.Content.Load<Texture2D>("zonePitfall"));
             currentZone = zones[0];
         }
 

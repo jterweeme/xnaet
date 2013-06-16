@@ -32,6 +32,7 @@ namespace XnaEt
         public abstract Pit getEast();
         public abstract Pit getSouth();
         public abstract Pit getPitFall();
+        public abstract int getZone();
 
         public override void Draw(GameTime gameTime)
         {

@@ -130,6 +130,7 @@
     <Compile Include="SnakePit.cs" />
     <Compile Include="SplashScreen.cs" />
     <Compile Include="TarPit.cs" />
+    <Compile Include="Zones.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Game.ico" />

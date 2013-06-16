@@ -43,5 +43,10 @@ namespace XnaEt
         {
             return new PitFall(this);
         }
+
+        public override int getZone()
+        {
+            return (int)Zones.PITFALL;
+        }
     }
 }

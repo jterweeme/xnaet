@@ -40,5 +40,10 @@ namespace XnaEt
         {
             return (checkCollision2(pos));
         }
+
+        public override int getZone()
+        {
+            return 1;
+        }
     }
 }

@@ -23,6 +23,7 @@ namespace XnaEt
             {
                 Game.Components.Remove(currentPit);
                 currentPit = value;
+                System.Console.WriteLine(value);
                 Game.Components.Add(value);
             }
         }
@@ -57,7 +58,7 @@ namespace XnaEt
             elliot.Visible = false;
             agent.Visible = false;
             CurrentPit = currentPit.getNorth();
-            player.Position = new Point(300, 200);
+            player.Position = new Point(player.getPos().X, 200);
         }
 
         private void goWest()
@@ -66,7 +67,7 @@ namespace XnaEt
             elliot.Visible = false;
             agent.Visible = false;
             CurrentPit = currentPit.getWest();
-            player.Position = new Point(300, 200);
+            player.Position = new Point(460, player.getPos().Y);
         }
 
         private void goEast()
@@ -75,7 +76,7 @@ namespace XnaEt
             elliot.Visible = false;
             agent.Visible = false;
             CurrentPit = currentPit.getEast();
-            player.Position = new Point(300, 200);
+            player.Position = new Point(20, player.getPos().Y);
         }
 
         private void goSouth()
@@ -84,7 +85,7 @@ namespace XnaEt
             elliot.Visible = false;
             agent.Visible = false;
             CurrentPit = currentPit.getSouth();
-            player.Position = new Point(300, 200);
+            player.Position = new Point(player.getPos().X, 15);
         }
 
         public void goPitFall()
@@ -93,49 +94,31 @@ namespace XnaEt
             elliot.Visible = false;
             agent.Visible = false;
             CurrentPit = currentPit.getPitFall();
-            //System.Console.WriteLine("Pitfall!");
+            header.setZone(10);
         }
 
         public override void Update(GameTime gameTime)
         {
 
             base.Update(gameTime);
-
+            header.setZone((int)currentPit.getZone());
             footer.Text = player.getEnergy().ToString();
-
             KeyboardState kb = Keyboard.GetState();
 
+            if (currentPit.checkCollision(player.getPos()))
+                goPitFall();
+
             if (kb.IsKeyDown(Keys.Up))
-            {
                 player.moveUp();
 
-                if (currentPit.checkCollision(player.getPos()))
-                    goPitFall();
-            }
-
             if (kb.IsKeyDown(Keys.Left))
-            {
                 player.moveLeft();
 
-                if (currentPit.checkCollision(player.getPos()))
-                    goPitFall();
-            }
-
             if (kb.IsKeyDown(Keys.Right))
-            {
                 player.moveRight();
 
-                if (currentPit.checkCollision(player.getPos()))
-                    goPitFall();
-            }
-
             if (kb.IsKeyDown(Keys.Down))
-            {
                 player.moveDown();
-
-                if (currentPit.checkCollision(player.getPos()))
-                    goPitFall();
-            }
 
             if (kb.IsKeyDown(Keys.LeftControl) && kb.GetPressedKeys().Length == 1)
                 player.setFlightMode(false);

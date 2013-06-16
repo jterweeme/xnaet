@@ -38,7 +38,12 @@ namespace XnaEt
 
         public override bool checkCollision(Point pos)
         {
-            return (checkCollision2(pos));
+            return checkCollision2(pos);
+        }
+
+        public override int getZone()
+        {
+            return Zones.HUMAN_REPELLANT;
         }
     }
 }
