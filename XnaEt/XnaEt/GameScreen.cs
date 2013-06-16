@@ -53,30 +53,45 @@ namespace XnaEt
 
         private void goNorth()
         {
+            scientist.Visible = false;
+            elliot.Visible = false;
+            agent.Visible = false;
             CurrentPit = currentPit.getNorth();
             player.Position = new Point(300, 200);
         }
 
         private void goWest()
         {
+            scientist.Visible = false;
+            elliot.Visible = false;
+            agent.Visible = false;
             CurrentPit = currentPit.getWest();
             player.Position = new Point(300, 200);
         }
 
         private void goEast()
         {
+            scientist.Visible = false;
+            elliot.Visible = false;
+            agent.Visible = false;
             CurrentPit = currentPit.getEast();
             player.Position = new Point(300, 200);
         }
 
         private void goSouth()
         {
+            scientist.Visible = false;
+            elliot.Visible = false;
+            agent.Visible = false;
             CurrentPit = currentPit.getSouth();
             player.Position = new Point(300, 200);
         }
 
         public void goPitFall()
         {
+            scientist.Visible = false;
+            elliot.Visible = false;
+            agent.Visible = false;
             CurrentPit = currentPit.getPitFall();
             //System.Console.WriteLine("Pitfall!");
         }

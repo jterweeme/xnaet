@@ -31,6 +31,8 @@ namespace XnaEt
         public EtGame()
         {
             graphics = new GraphicsDeviceManager(this);
+            graphics.PreferredBackBufferWidth = 640;
+            graphics.PreferredBackBufferHeight = 400;
             Content.RootDirectory = "Content";
         }
 
