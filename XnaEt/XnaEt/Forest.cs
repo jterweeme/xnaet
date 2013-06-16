@@ -4,9 +4,13 @@ namespace XnaEt
 {
     public class Forest : Pit
     {
+        static Zones zones;
+
         public Forest()
             : base("forest")
         {
+            if (zones == null)
+                zones = new Zones();
         }
 
         protected override void LoadContent()
@@ -21,8 +25,7 @@ namespace XnaEt
         }
 
         public override Pit getWest()
-        {
-            return new OlivePit();
+        {   return new OlivePit();
         }
 
         public override Pit getEast()
@@ -34,13 +37,11 @@ namespace XnaEt
         }
 
         public override Pit getPitFall()
-        {
-            return new PitFall(this);
+        {   return new PitFall(this);
         }
 
-        public override int getZone()
-        {
-            return 1;
+        public override int getZone(Point pos)
+        {   return zones.getZone(pos);
         }
     }
 }

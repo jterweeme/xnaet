@@ -37,14 +37,12 @@ namespace XnaEt
         protected override void LoadContent()
         {
             base.LoadContent();
-
             sb = new SpriteBatch(GraphicsDevice);
             player = new Player();
             currentPit = new Forest();
             agent = new Agent();
             elliot = new Elliot();
             scientist = new Scientist();
-
             EtGame.instanz.Components.Add(player);
             EtGame.instanz.Components.Add(currentPit);
             EtGame.instanz.Components.Add(agent);
@@ -99,9 +97,8 @@ namespace XnaEt
 
         public override void Update(GameTime gameTime)
         {
-
             base.Update(gameTime);
-            header.setZone((int)currentPit.getZone());
+            header.setZone((int)currentPit.getZone(player.getPos()));
             footer.Text = player.getEnergy().ToString();
             KeyboardState kb = Keyboard.GetState();
 

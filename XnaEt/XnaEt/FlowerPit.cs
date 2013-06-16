@@ -3,9 +3,13 @@ namespace XnaEt
 {
     public class FlowerPit : Pit
     {
+        static Zones zones;
+
         public FlowerPit()
             : base("flowerpit")
         {
+            if (zones == null)
+                zones = new Zones();
         }
 
         protected override void LoadContent()
@@ -32,18 +36,15 @@ namespace XnaEt
         }
 
         public override Pit getPitFall()
-        {
-            return new PitFall(this);
+        {   return new PitFall(this);
         }
 
         public override bool checkCollision(Point pos)
-        {
-            return checkCollision2(pos);
+        {   return checkCollision2(pos);
         }
 
-        public override int getZone()
-        {
-            return (int)Zones.CALLELLIOT;
+        public override int getZone(Point pos)
+        {   return zones.getZone(pos);
         }
     }
 }

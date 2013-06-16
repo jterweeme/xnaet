@@ -24,8 +24,7 @@ namespace XnaEt
         }
 
         public void setBgColor(Color color)
-        {
-            bgColor.SetData(new Color[] { color });
+        {   bgColor.SetData(new Color[] { color });
         }
 
         public override void Draw(GameTime gameTime)

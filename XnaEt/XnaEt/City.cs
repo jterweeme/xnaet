@@ -3,9 +3,13 @@ namespace XnaEt
 {
     public class City : Pit
     {
+        static Zones zones;
+
         public City()
             : base("city")
         {
+            if (zones == null)
+                zones = new Zones();
         }
 
         protected override void LoadContent()
@@ -32,13 +36,11 @@ namespace XnaEt
         }
 
         public override Pit getPitFall()
-        {
-            return new PitFall(this);
+        {   return new PitFall(this);
         }
 
-        public override int getZone()
-        {
-            return 1;
+        public override int getZone(Point pos)
+        {   return zones.getZone(pos);
         }
     }
 }

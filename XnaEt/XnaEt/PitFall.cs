@@ -20,33 +20,27 @@ namespace XnaEt
         }
 
         public override Pit getNorth()
-        {
-            return originalPit;
+        {   return originalPit;
         }
 
         public override Pit getWest()
-        {
-            return originalPit;
+        {   return originalPit;
         }
 
         public override Pit getEast()
-        {
-            return originalPit;
+        {   return originalPit;
         }
 
         public override Pit getSouth()
-        {
-            return originalPit;
+        {   return originalPit;
         }
 
         public override Pit getPitFall()
-        {
-            return new PitFall(this);
+        {   return new PitFall(this);
         }
 
-        public override int getZone()
-        {
-            return (int)Zones.PITFALL;
+        public override int getZone(Point pos)
+        {   return Zones.PITFALL;
         }
     }
 }

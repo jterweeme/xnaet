@@ -34,12 +34,12 @@ namespace XnaEt
             zones.Add(Game.Content.Load<Texture2D>("zoneDown"));
             zones.Add(Game.Content.Load<Texture2D>("zoneCallEliot"));
             zones.Add(Game.Content.Load<Texture2D>("zonePitfall"));
+            zones.Add(Game.Content.Load<Texture2D>("zoneQuestion"));
             currentZone = zones[0];
         }
 
         public void setZone(int zone)
-        {
-            currentZone = zones[zone];
+        {   currentZone = zones[zone];
         }
 
         public override void Draw(GameTime gameTime)
@@ -47,7 +47,7 @@ namespace XnaEt
             base.Draw(gameTime);
             sb.Begin();
             sb.Draw(bgcolor, new Rectangle(0, 14, 640, 30), Color.White);
-            sb.Draw(currentZone, new Rectangle(200, 14, 30, 30), Color.White);
+            sb.Draw(currentZone, new Rectangle(295, 14, 50, 30), Color.White);
             sb.End();
         }
     }

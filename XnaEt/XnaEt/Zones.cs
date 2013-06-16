@@ -1,15 +1,19 @@
 ﻿using System;
+using Microsoft.Xna.Framework;
 
 namespace XnaEt
 {
     public class Zones
     {
-        int zone;
+        int[] zones;
 
         public Zones()
         {
             Random random = new Random();
-            zone = random.Next(0, 10);
+            zones = new int[16];
+
+            for (int i = 0; i < 16; i++)
+                zones[i] = random.Next(0, 10);
         }
 
         public const int TITLE = 0, CANDY_MUNCHING = 1, HUMAN_REPELLANT = 2, CALLSHIP = 3,
@@ -21,9 +25,14 @@ namespace XnaEt
                         CALLELLIOT = 9,
                         PITFALL = 10;
 
-        public int getZone()
+        public int getZone(Point pos)
         {
-            return zone;
+            int x = pos.X / (512 / 4);
+            return zones[x];
+        }
+
+        public int getZone()
+        {   return zones[0];
         }
     }
 }
