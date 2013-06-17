@@ -48,9 +48,10 @@ namespace XnaEt
             sb.End();
         }
 
+        /*
         public virtual bool checkCollision(Point pos)
         {   return false;
-        }
+        }*/
 
         protected bool checkCollision2(Point pos)
         {

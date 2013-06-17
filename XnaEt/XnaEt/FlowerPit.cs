@@ -38,12 +38,12 @@ namespace XnaEt
         {   return new PitFall(this);
         }
 
-        public override bool checkCollision(Point pos)
+        public bool checkCollision(Point pos)
         {   return checkCollision2(pos);
         }
 
         public override int checkPitFall(Point pos)
-        {   return checkCollision(pos) ? 1 : -1;
+        {   return checkCollision(pos) ? 3 : -1;
         }
 
         public override int getZone(Point pos)

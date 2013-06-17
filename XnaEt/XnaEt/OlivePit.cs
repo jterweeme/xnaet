@@ -42,12 +42,30 @@ namespace XnaEt
             return new PitFall(this);
         }
 
-        public override bool checkCollision(Point pos)
+        
+        public bool checkCollision(Point pos)
         {   return checkCollision2(pos);
         }
 
+        public int whichPit(Point pos)
+        {
+            if (pos.X < 240 && pos.Y < 100)
+                return 1;
+
+            if (pos.X > 240 && pos.Y < 100)
+                return 2;
+
+            if (pos.X < 240 && pos.Y > 100)
+                return 3;
+
+            if (pos.X > 240 && pos.Y > 100)
+                return 4;
+
+            return -1;
+        }
+
         public override int checkPitFall(Point pos)
-        {   return checkCollision(pos) ? 1 : -1;
+        {   return checkCollision(pos) ? whichPit(pos) : -1;
         }
 
         public override int getZone(Point pos)
