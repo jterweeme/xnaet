@@ -4,11 +4,7 @@ using Microsoft.Xna.Framework.Graphics;
 namespace XnaEt
 {
     public class Agent : Foe
-    {
-
-
-       
-
+    {  
         public Agent()
         {
             DrawOrder = 9999;
@@ -32,14 +28,6 @@ namespace XnaEt
                     Color.White, 0, Vector2.Zero, 1, foeEffect, 0);
             sb.End();
         }
-
-        public override void Update(GameTime gameTime)
-        {
-            base.Update(gameTime);
-
-            
-        }
-
         
     }
 }
