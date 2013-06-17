@@ -109,6 +109,17 @@ namespace XnaEt
             header.setZone(10);
         }
 
+        public void goPitFall(Point pos)
+        {
+            scientist.Visible = false;
+            elliot.Visible = false;
+            agent.Visible = false;
+            player.Position = new Point(250, 40);
+            player.setPitLocation(true);
+            CurrentPit = currentPit.getPitFall();
+            header.setZone(10);
+        }
+
         public override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
@@ -117,7 +128,7 @@ namespace XnaEt
             KeyboardState kb = Keyboard.GetState();
 
             if (currentPit.checkCollision(player.getPos()))
-                goPitFall();
+                goPitFall(player.getPos());
 
             if (kb.IsKeyDown(Keys.Up))
                 player.moveUp();

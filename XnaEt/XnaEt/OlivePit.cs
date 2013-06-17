@@ -8,8 +8,7 @@ namespace XnaEt
     {
         static Zones zone;
 
-        public OlivePit()
-            : base("olivepit")
+        public OlivePit() : base("olivepit")
         {
             if (zone == null)
                 zone = new Zones();
@@ -39,11 +38,12 @@ namespace XnaEt
         }
 
         public override Pit getPitFall()
-        {   return new PitFall(this);
+        {
+            return new PitFall(this);
         }
 
         public override bool checkCollision(Point pos)
-        {   return (checkCollision2(pos));
+        {   return checkCollision2(pos);
         }
 
         public override int getZone(Point pos)

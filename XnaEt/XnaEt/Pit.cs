@@ -8,14 +8,22 @@ namespace XnaEt
         Texture2D dinges;
         protected Texture2D background;
         SpriteBatch sb;
-
+        public abstract Pit getNorth();
+        public abstract Pit getWest();
+        public abstract Pit getEast();
+        public abstract Pit getSouth();
+        public abstract int getZone(Point pos);
         string asset;
 
-        public Pit(string asset)
-            : base(EtGame.instanz)
+        public Pit(string asset) : base(EtGame.instanz)
         {
             DrawOrder = 9998;
             this.asset = asset;
+        }
+
+        public virtual Pit getPitFall()
+        {
+            return null;
         }
 
         protected override void LoadContent()
@@ -23,16 +31,8 @@ namespace XnaEt
             base.LoadContent();
             sb = new SpriteBatch(GraphicsDevice);
             dinges = Game.Content.Load<Texture2D>(asset);
-            background = new Texture2D(GraphicsDevice, 1, 1);
-            
+            background = new Texture2D(GraphicsDevice, 1, 1);    
         }
-
-        public abstract Pit getNorth();
-        public abstract Pit getWest();
-        public abstract Pit getEast();
-        public abstract Pit getSouth();
-        public abstract Pit getPitFall();
-        public abstract int getZone(Point pos);
 
         public override void Draw(GameTime gameTime)
         {
