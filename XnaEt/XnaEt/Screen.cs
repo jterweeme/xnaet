@@ -10,8 +10,7 @@ namespace XnaEt
         protected Texture2D bgColor;
         protected SpriteBatch sb;
 
-        public Screen()
-            : base(EtGame.instanz)
+        public Screen() : base(EtGame.instanz)
         {
         }
 

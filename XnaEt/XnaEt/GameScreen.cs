@@ -7,12 +7,18 @@ namespace XnaEt
 {
     public class GameScreen : Screen
     {
+        int[] piecePlaatsen;
         Player player;
         Pit currentPit;
         Agent agent;
         Scientist scientist;
         Elliot elliot;
         bool ctrlKeyActive = false;
+
+        public GameScreen()
+        {
+            piecePlaatsen = new int[24];    // er zijn 24 pits waar je in kan vallen
+        }
 
         public Pit CurrentPit
         {
