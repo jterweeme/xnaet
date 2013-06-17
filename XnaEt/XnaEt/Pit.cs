@@ -48,11 +48,6 @@ namespace XnaEt
             sb.End();
         }
 
-        /*
-        public virtual bool checkCollision(Point pos)
-        {   return false;
-        }*/
-
         protected bool checkCollision2(Point pos)
         {
             Color[] retrievedColor = new Color[700 * 500];
