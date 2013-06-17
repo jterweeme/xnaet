@@ -6,8 +6,7 @@ namespace XnaEt
     {
         static Zones zones;
 
-        public Forest()
-            : base("forest")
+        public Forest() : base("forest")
         {
             if (zones == null)
                 zones = new Zones();

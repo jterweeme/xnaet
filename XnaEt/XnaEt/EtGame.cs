@@ -12,8 +12,8 @@ namespace XnaEt
     {
         public static EtGame instanz;
         GraphicsDeviceManager graphics;
-
         Screen currentScreen;
+
         public Screen CurrentScreen
         {
             get

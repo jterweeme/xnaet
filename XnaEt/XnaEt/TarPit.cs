@@ -5,8 +5,7 @@ namespace XnaEt
     {
         static Zones zones;
 
-        public TarPit()
-            : base("tarpit")
+        public TarPit() : base("tarpit")
         {
             if (zones == null)
                 zones = new Zones();
@@ -41,6 +40,11 @@ namespace XnaEt
 
         public override bool checkCollision(Point pos)
         {   return checkCollision2(pos);
+        }
+
+        public override int checkPitFall(Point pos)
+        {
+            return checkCollision(pos) ? 1 : -1;
         }
 
         public override int getZone(Point pos)

@@ -126,10 +126,6 @@ namespace XnaEt
             header.setZone((int)currentPit.getZone(player.getPos()));
             footer.Text = player.getEnergy().ToString();
             KeyboardState kb = Keyboard.GetState();
-
-            /*if (currentPit.checkCollision(player.getPos()))
-                goPitFall(player.getPos());*/
-
             int pit;
 
             if ((pit = currentPit.checkPitFall(player.getPos())) >= 0)

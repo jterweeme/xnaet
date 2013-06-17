@@ -47,8 +47,7 @@ namespace XnaEt
         }
 
         public override int checkPitFall(Point pos)
-        {
-            return checkCollision(pos) ? 1 : -1;
+        {   return checkCollision(pos) ? 1 : -1;
         }
 
         public override int getZone(Point pos)
