@@ -12,8 +12,7 @@ namespace XnaEt
         List<Texture2D> pieces;
         Texture2D currentZone;
 
-        public Header()
-            : base(EtGame.instanz)
+        public Header() : base(EtGame.instanz)
         {
             zones = new List<Texture2D>();
             pieces = new List<Texture2D>();
@@ -54,7 +53,7 @@ namespace XnaEt
             sb.Begin();
             sb.Draw(bgcolor, new Rectangle(0, 14, 640, 30), Color.White);
             sb.Draw(currentZone, new Rectangle(295, 14, 50, 30), Color.White);
-            sb.Draw(pieces[3], new Rectangle(150, 14, 51, 30), Color.White);
+            sb.Draw(pieces[0], new Rectangle(150, 14, 51, 30), Color.White);
             sb.End();
         }
     }
