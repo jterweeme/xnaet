@@ -12,6 +12,7 @@ namespace XnaEt
         Agent agent;
         Scientist scientist;
         Elliot elliot;
+        bool ctrlKeyActive = false;
 
         public Pit CurrentPit
         {
@@ -55,6 +56,7 @@ namespace XnaEt
             scientist.Visible = false;
             elliot.Visible = false;
             agent.Visible = false;
+            player.setPitLocation(false);
             CurrentPit = currentPit.getNorth();
             player.Position = new Point(player.getPos().X, 200);
         }
@@ -64,6 +66,7 @@ namespace XnaEt
             scientist.Visible = false;
             elliot.Visible = false;
             agent.Visible = false;
+            player.setPitLocation(false);
             CurrentPit = currentPit.getWest();
             player.Position = new Point(460, player.getPos().Y);
         }
@@ -73,6 +76,7 @@ namespace XnaEt
             scientist.Visible = false;
             elliot.Visible = false;
             agent.Visible = false;
+            player.setPitLocation(false);
             CurrentPit = currentPit.getEast();
             player.Position = new Point(20, player.getPos().Y);
         }
@@ -82,6 +86,7 @@ namespace XnaEt
             scientist.Visible = false;
             elliot.Visible = false;
             agent.Visible = false;
+            player.setPitLocation(false);
             CurrentPit = currentPit.getSouth();
             player.Position = new Point(player.getPos().X, 15);
         }
@@ -91,6 +96,8 @@ namespace XnaEt
             scientist.Visible = false;
             elliot.Visible = false;
             agent.Visible = false;
+            player.Position = new Point(250, 40);
+            player.setPitLocation(true);
             CurrentPit = currentPit.getPitFall();
             header.setZone(10);
         }
@@ -117,8 +124,11 @@ namespace XnaEt
             if (kb.IsKeyDown(Keys.Down))
                 player.moveDown();
 
-            if (kb.IsKeyDown(Keys.LeftControl) && kb.GetPressedKeys().Length == 1)
-                player.setFlightMode(false);
+            if (kb.IsKeyDown(Keys.LeftControl) && kb.GetPressedKeys().Length == 1 && !this.ctrlKeyActive)
+            {
+                player.setFlightMode();
+                this.ctrlKeyActive = true;
+            }
 
             if (player.getPos().Y < 5)
                 goNorth();
@@ -131,6 +141,9 @@ namespace XnaEt
 
             if (player.getPos().Y > 240)
                 goSouth();
+
+            if (kb.IsKeyUp(Keys.LeftControl))
+                this.ctrlKeyActive = false;
         }
     }
 }

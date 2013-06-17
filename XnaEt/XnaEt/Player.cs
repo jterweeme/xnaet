@@ -69,10 +69,20 @@ namespace XnaEt
         {
             base.Update(gameTime);
             if (!this.flightMode)
+            {
                 texture = links;
+                if (this.inPit && this.pos.Y < 206 && !this.flightMode)
+                {
+                    this.pos.Y += 1;
+
+                    if (!this.freezeeVertical)
+                        this.freezeeVertical = true;
+                }
+
+                
+            }
             else
             {
-                
                 texture = left_neck_up;
                 this.flightAnimate();
             }
@@ -122,8 +132,11 @@ namespace XnaEt
 
                 for (int i = 0; i < speed; i++)
                 {
-                    pos.X--;
-                    energy--;
+                    if (!this.inPit || (this.inPit && pos.X > 130))
+                    {
+                        pos.X--;
+                        energy--;
+                    }
                 }
             }
         }
@@ -140,8 +153,11 @@ namespace XnaEt
 
                 for (int i = 0; i < speed; i++)
                 {
-                    pos.X++;
-                    energy--;
+                    if (!this.inPit || (this.inPit && pos.X < 350))
+                    {
+                        pos.X++;
+                        energy--;
+                    }
                 }
             }
         }
@@ -182,6 +198,9 @@ namespace XnaEt
                 {
                     if(!this.inPit)
                         this.flightReverse = true;
+
+                    if (this.freezeeVertical)
+                        this.freezeeVertical = false;
                 }
                 else
                 {
@@ -209,10 +228,8 @@ namespace XnaEt
             }
         }
 
-        public void setFlightMode(bool inPit)
+        public void setFlightMode()
         {
-            this.inPit = inPit;
-
             if (!flightMode)
             {
                 this.currentFrame.X = 0;
@@ -226,6 +243,15 @@ namespace XnaEt
                 this.freezeHorizontal = true;
                 this.flightMode = true;
             }
+            else
+            {
+                this.flightReverse = true;
+            }
+        }
+
+        public void setPitLocation(bool inPit)
+        {
+            this.inPit = inPit;
         }
     }
 }
