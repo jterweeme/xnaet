@@ -127,7 +127,12 @@ namespace XnaEt
             footer.Text = player.getEnergy().ToString();
             KeyboardState kb = Keyboard.GetState();
 
-            if (currentPit.checkCollision(player.getPos()))
+            /*if (currentPit.checkCollision(player.getPos()))
+                goPitFall(player.getPos());*/
+
+            int pit;
+
+            if ((pit = currentPit.checkPitFall(player.getPos())) >= 0)
                 goPitFall(player.getPos());
 
             if (kb.IsKeyDown(Keys.Up))

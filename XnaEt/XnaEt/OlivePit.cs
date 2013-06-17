@@ -46,6 +46,11 @@ namespace XnaEt
         {   return checkCollision2(pos);
         }
 
+        public override int checkPitFall(Point pos)
+        {
+            return checkCollision(pos) ? 1 : -1;
+        }
+
         public override int getZone(Point pos)
         {   return zone.getZone(pos);
         }

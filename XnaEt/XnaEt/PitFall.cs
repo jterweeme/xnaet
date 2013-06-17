@@ -34,10 +34,6 @@ namespace XnaEt
         {   return originalPit;
         }
 
-        public override Pit getPitFall()
-        {   return new PitFall(this);
-        }
-
         public override int getZone(Point pos)
         {   return Zones.PITFALL;
         }

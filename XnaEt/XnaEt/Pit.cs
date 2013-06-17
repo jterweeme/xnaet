@@ -21,6 +21,11 @@ namespace XnaEt
             this.asset = asset;
         }
 
+        public virtual int checkPitFall(Point pos)
+        {
+            return -1;
+        }
+
         public virtual Pit getPitFall()
         {
             return null;
