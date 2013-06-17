@@ -109,8 +109,9 @@ namespace XnaEt
             header.setZone(10);
         }
 
-        public void goPitFall(Point pos)
+        public void goPitFall(int pit)
         {
+            System.Console.Error.WriteLine(pit);
             scientist.Visible = false;
             elliot.Visible = false;
             agent.Visible = false;
@@ -129,7 +130,7 @@ namespace XnaEt
             int pit;
 
             if ((pit = currentPit.checkPitFall(player.getPos())) >= 0)
-                goPitFall(player.getPos());
+                goPitFall(pit);
 
             if (kb.IsKeyDown(Keys.Up))
                 player.moveUp();
