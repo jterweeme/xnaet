@@ -9,12 +9,14 @@ namespace XnaEt
         Texture2D bgcolor;
         SpriteBatch sb;
         List<Texture2D> zones;
+        List<Texture2D> pieces;
         Texture2D currentZone;
 
         public Header()
             : base(EtGame.instanz)
         {
             zones = new List<Texture2D>();
+            pieces = new List<Texture2D>();
         }
 
         protected override void LoadContent()
@@ -35,6 +37,10 @@ namespace XnaEt
             zones.Add(Game.Content.Load<Texture2D>("zoneCallEliot"));
             zones.Add(Game.Content.Load<Texture2D>("zonePitfall"));
             zones.Add(Game.Content.Load<Texture2D>("zoneQuestion"));
+            pieces.Add(Game.Content.Load<Texture2D>("pieces0"));
+            pieces.Add(Game.Content.Load<Texture2D>("pieces1"));
+            pieces.Add(Game.Content.Load<Texture2D>("pieces2"));
+            pieces.Add(Game.Content.Load<Texture2D>("pieces3"));
             currentZone = zones[0];
         }
 
@@ -48,6 +54,7 @@ namespace XnaEt
             sb.Begin();
             sb.Draw(bgcolor, new Rectangle(0, 14, 640, 30), Color.White);
             sb.Draw(currentZone, new Rectangle(295, 14, 50, 30), Color.White);
+            sb.Draw(pieces[3], new Rectangle(150, 14, 51, 30), Color.White);
             sb.End();
         }
     }
