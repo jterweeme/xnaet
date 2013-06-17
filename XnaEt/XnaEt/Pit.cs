@@ -26,7 +26,7 @@ namespace XnaEt
             return -1;
         }
 
-        public virtual Pit getPitFall()
+        public virtual PitFall getPitFall()
         {
             return null;
         }

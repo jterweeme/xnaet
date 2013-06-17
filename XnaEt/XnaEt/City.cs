@@ -5,8 +5,7 @@ namespace XnaEt
     {
         static Zones zones;
 
-        public City()
-            : base("city")
+        public City() : base("city")
         {
             if (zones == null)
                 zones = new Zones();
@@ -35,7 +34,7 @@ namespace XnaEt
         {   return new TarPit();
         }
 
-        public override Pit getPitFall()
+        public override PitFall getPitFall()
         {   return new PitFall(this);
         }
 

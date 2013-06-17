@@ -37,9 +37,8 @@ namespace XnaEt
         {   return new City();
         }
 
-        public override Pit getPitFall()
-        {
-            return new PitFall(this);
+        public override PitFall getPitFall()
+        {   return new PitFall(this);
         }
 
         

@@ -34,7 +34,7 @@ namespace XnaEt
         {   return new City();
         }
 
-        public override Pit getPitFall()
+        public override PitFall getPitFall()
         {   return new PitFall(this);
         }
 
@@ -60,8 +60,7 @@ namespace XnaEt
         }
 
         public override int checkPitFall(Point pos)
-        {
-            return checkCollision(pos) ? whichPit(pos) : -1;
+        {   return checkCollision(pos) ? whichPit(pos) : -1;
         }
 
         public override int getZone(Point pos)

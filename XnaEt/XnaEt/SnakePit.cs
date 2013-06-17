@@ -34,7 +34,7 @@ namespace XnaEt
         {   return new City();
         }
 
-        public override Pit getPitFall()
+        public override PitFall getPitFall()
         {   return new PitFall(this);
         }
 
@@ -42,8 +42,37 @@ namespace XnaEt
         {   return checkCollision2(pos);
         }
 
+        public int whichPit(Point pos)
+        {
+            if (pos.X < 240 && pos.Y < 120)
+                return 9;
+
+            if (pos.X > 240 && pos.Y < 120)
+                return 10;
+
+            if (pos.X < 240 && pos.Y > 120)
+                return 11;
+
+            if (pos.X > 240 && pos.Y > 120)
+                return 12;
+
+            if (pos.X < 240 && pos.Y < 120)
+                return 13;
+
+            if (pos.X > 240 && pos.Y < 120)
+                return 14;
+
+            if (pos.X < 240 && pos.Y > 120)
+                return 15;
+
+            if (pos.X > 240 && pos.Y > 120)
+                return 16;
+
+            return -1;
+        }
+
         public override int checkPitFall(Point pos)
-        {   return checkCollision(pos) ? 1 : -1;
+        {   return checkCollision(pos) ? whichPit(pos) : -1;
         }
 
         public override int getZone(Point pos)

@@ -117,7 +117,8 @@ namespace XnaEt
             agent.Visible = false;
             player.Position = new Point(250, 40);
             player.setPitLocation(true);
-            CurrentPit = currentPit.getPitFall();
+            Pit dePit = currentPit.getPitFall();
+            CurrentPit = dePit;
             header.setZone(10);
         }
 

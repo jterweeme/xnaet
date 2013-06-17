@@ -35,10 +35,6 @@ namespace XnaEt
         {   return new FlowerPit();
         }
 
-        public override Pit getPitFall()
-        {   return new PitFall(this);
-        }
-
         public override int getZone(Point pos)
         {   return zones.getZone(pos);
         }
