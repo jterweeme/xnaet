@@ -18,6 +18,11 @@ namespace XnaEt
             background.SetData(new Color[] { new Color(170, 170, 170) });
         }
 
+        public void addPiece(DrawableGameComponent piece)
+        {
+            EtGame.instanz.Components.Add(piece);
+        }
+
         public override Pit getNorth()
         {   return originalPit;
         }

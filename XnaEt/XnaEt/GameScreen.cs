@@ -118,6 +118,9 @@ namespace XnaEt
             player.Position = new Point(250, 40);
             player.setPitLocation(true);
             Pit dePit = currentPit.getPitFall();
+
+            
+
             CurrentPit = dePit;
             header.setZone(10);
         }

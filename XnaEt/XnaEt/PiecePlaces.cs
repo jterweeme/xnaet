@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text;
+using Microsoft.Xna.Framework;
 
 namespace XnaEt
 {
@@ -24,6 +25,16 @@ namespace XnaEt
 
                 piecePlaatsen[x] = i;
             }
+        }
+
+        public DrawableGameComponent getPieceFromPlace(int pitfall)
+        {
+            switch (piecePlaatsen[pitfall])
+            {
+                case 1:
+                    return null;
+            }
+            return null;
         }
 
         public override string ToString()
