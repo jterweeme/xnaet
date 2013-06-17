@@ -7,7 +7,7 @@ namespace XnaEt
 {
     public class GameScreen : Screen
     {
-        int[] piecePlaatsen;
+        PiecePlaces piecePlaces;
         Player player;
         Pit currentPit;
         Agent agent;
@@ -17,7 +17,8 @@ namespace XnaEt
 
         public GameScreen()
         {
-            piecePlaatsen = new int[24];    // er zijn 24 pits waar je in kan vallen
+            piecePlaces = new PiecePlaces();
+            System.Console.Error.WriteLine(piecePlaces);
         }
 
         public Pit CurrentPit
@@ -30,7 +31,7 @@ namespace XnaEt
             {
                 Game.Components.Remove(currentPit);
                 currentPit = value;
-                System.Console.WriteLine(value);
+                //System.Console.Error.WriteLine(value);
                 Game.Components.Add(value);
             }
         }
