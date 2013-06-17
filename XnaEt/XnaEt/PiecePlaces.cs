@@ -27,12 +27,14 @@ namespace XnaEt
             }
         }
 
-        public DrawableGameComponent getPieceFromPlace(int pitfall)
+        public Piece getPieceFromPlace(int pitfall)
         {
             switch (piecePlaatsen[pitfall])
             {
                 case 1:
-                    return null;
+                case 2:
+                case 3:
+                    return new Piece("piece1");
             }
             return null;
         }

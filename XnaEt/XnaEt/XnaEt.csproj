@@ -120,6 +120,7 @@
     <Compile Include="GameScreen.cs" />
     <Compile Include="Header.cs" />
     <Compile Include="OlivePit.cs" />
+    <Compile Include="Piece.cs" />
     <Compile Include="PiecePlaces.cs" />
     <Compile Include="Pit.cs" />
     <Compile Include="PitFall.cs" />

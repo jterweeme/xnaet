@@ -18,7 +18,7 @@ namespace XnaEt
             background.SetData(new Color[] { new Color(170, 170, 170) });
         }
 
-        public void addPiece(DrawableGameComponent piece)
+        public void addPiece(Piece piece)
         {
             EtGame.instanz.Components.Add(piece);
         }
