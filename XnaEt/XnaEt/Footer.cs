@@ -10,8 +10,7 @@ namespace XnaEt
         public string Text { get; set; }
         SpriteFont font;
 
-        public Footer()
-            : base(EtGame.instanz)
+        public Footer() : base(EtGame.instanz)
         {
             Text = "";
         }

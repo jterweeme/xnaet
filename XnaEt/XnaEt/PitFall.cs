@@ -6,8 +6,7 @@ namespace XnaEt
         // de pit van waar je in de kuil bent gevallen
         private Pit originalPit;
 
-        public PitFall(Pit originalPit)
-            : base("pitfall")
+        public PitFall(Pit originalPit) : base("pitfall")
         {
             this.originalPit = originalPit;
         }
