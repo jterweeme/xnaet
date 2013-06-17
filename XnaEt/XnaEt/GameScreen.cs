@@ -165,8 +165,10 @@ namespace XnaEt
             if (kb.IsKeyUp(Keys.LeftControl))
                 this.ctrlKeyActive = false;
 
-            // Give the Agent the acutal position of ET
+            // Give the Foes the acutal position of ET
             agent.ETPosition = player.Position;
+            elliot.ETPosition = player.Position;
+            scientist.ETPosition = player.Position;
         }
     }
 }

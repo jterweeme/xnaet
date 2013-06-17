@@ -274,8 +274,20 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="agent-et.png">
-      <Name>agent-et</Name>
+    <Compile Include="agent-run.png">
+      <Name>agent-run</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="scientist-run.png">
+      <Name>scientist-run</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="elliot-run.png">
+      <Name>elliot-run</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
