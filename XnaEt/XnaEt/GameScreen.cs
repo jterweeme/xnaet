@@ -98,17 +98,6 @@ namespace XnaEt
             player.Position = new Point(player.getPos().X, 15);
         }
 
-        public void goPitFall()
-        {
-            scientist.Visible = false;
-            elliot.Visible = false;
-            agent.Visible = false;
-            player.Position = new Point(250, 40);
-            player.setPitLocation(true);
-            CurrentPit = currentPit.getPitFall();
-            header.setZone(10);
-        }
-
         public void goPitFall(int pit)
         {
             System.Console.Error.WriteLine(pit);
