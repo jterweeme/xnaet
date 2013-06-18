@@ -29,11 +29,15 @@ namespace XnaEt
             }
             set
             {
-                Game.Components.Remove(currentPit);
-                currentPit = value;
-                //System.Console.Error.WriteLine(value);
-                Game.Components.Add(value);
+                setCurrentPit(value);
             }
+        }
+
+        public void setCurrentPit(Pit pit)
+        {
+            Game.Components.Remove(currentPit);
+            currentPit = pit;
+            Game.Components.Add(pit);
         }
 
         public override void Initialize()
