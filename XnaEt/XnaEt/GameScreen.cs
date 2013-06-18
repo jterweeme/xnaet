@@ -21,18 +21,6 @@ namespace XnaEt
             System.Console.Error.WriteLine(piecePlaces);
         }
 
-        public Pit CurrentPit
-        {
-            get
-            {
-                return currentPit;
-            }
-            set
-            {
-                setCurrentPit(value);
-            }
-        }
-
         public void setCurrentPit(Pit pit)
         {
             Game.Components.Remove(currentPit);
