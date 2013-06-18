@@ -12,7 +12,7 @@ namespace XnaEt
         Pit currentPit;
         Agent agent;
         Scientist scientist;
-        Elliot elliot;
+        Elliott elliot;
         bool ctrlKeyActive = false;
 
         public GameScreen()
@@ -49,7 +49,7 @@ namespace XnaEt
             player = new Player();
             currentPit = new Forest();
             agent = new Agent();
-            elliot = new Elliot();
+            elliot = new Elliott();
             scientist = new Scientist();
             EtGame.instanz.Components.Add(player);
             EtGame.instanz.Components.Add(currentPit);

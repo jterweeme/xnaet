@@ -3,9 +3,9 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace XnaEt
 {
-    public class Elliot : Foe
+    public class Elliott : Foe
     {
-        public Elliot()
+        public Elliott()
         {
             DrawOrder = 9999;
             pos = new Point(200, 50);
