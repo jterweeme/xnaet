@@ -183,8 +183,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="zoneCallEliot.png">
-      <Name>zoneCallEliot</Name>
+    <Compile Include="zoneCallElliott.png">
+      <Name>zoneCallElliott</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

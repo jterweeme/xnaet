@@ -6,7 +6,7 @@ namespace XnaEt
 {
     public class Piece : DrawableGameComponent
     {
-        Texture2D dinges;
+        Texture2D texture;
         SpriteBatch sb;
         string asset;
 
@@ -20,14 +20,14 @@ namespace XnaEt
         {
             base.LoadContent();
             sb = new SpriteBatch(GraphicsDevice);
-            dinges = Game.Content.Load<Texture2D>(asset);
+            texture = Game.Content.Load<Texture2D>(asset);
         }
 
         public override void Draw(GameTime gameTime)
         {
             base.Draw(gameTime);
             sb.Begin();
-            sb.Draw(dinges, new Rectangle(220, 240, 42, 42), Color.White);
+            sb.Draw(texture, new Rectangle(220, 240, 42, 42), Color.White);
             sb.End();
         }
     }

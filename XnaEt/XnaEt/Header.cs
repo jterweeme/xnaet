@@ -33,7 +33,7 @@ namespace XnaEt
             zones.Add(Game.Content.Load<Texture2D>("zoneLeft"));
             zones.Add(Game.Content.Load<Texture2D>("zoneRight"));
             zones.Add(Game.Content.Load<Texture2D>("zoneDown"));
-            zones.Add(Game.Content.Load<Texture2D>("zoneCallEliot"));
+            zones.Add(Game.Content.Load<Texture2D>("zoneCallElliott"));
             zones.Add(Game.Content.Load<Texture2D>("zonePitfall"));
             zones.Add(Game.Content.Load<Texture2D>("zoneQuestion"));
             pieces.Add(Game.Content.Load<Texture2D>("pieces0"));
