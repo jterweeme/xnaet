@@ -63,12 +63,20 @@ namespace XnaEt
             if (!this.flightMode)
             {
                 texture = links;
+
                 if (this.inPit && this.pos.Y < 206 && !this.flightMode)
                 {
                     this.pos.Y += 1;
 
                     if (!this.freezeeVertical)
                         this.freezeeVertical = true;
+
+                    if (!this.freezeHorizontal)
+                        this.freezeHorizontal = true;
+                }
+                else
+                {
+                    this.freezeHorizontal = false;
                 }
             }
             else
