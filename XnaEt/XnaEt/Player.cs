@@ -13,6 +13,7 @@ namespace XnaEt
         Texture2D right_neck_up;
         SpriteBatch sb;
         Point pos;
+        Rectangle boundingBox;
         int animation_speed = 4;
         int animation_count = 0;
         bool freezeeVertical = false;
@@ -38,6 +39,7 @@ namespace XnaEt
 
         public Player() : base(EtGame.instanz)
         {
+            boundingBox = new Rectangle(300, 200, 33, 30);
             DrawOrder = 9999;
             pos = new Point(300, 200);
             energy = 9999;
@@ -79,8 +81,10 @@ namespace XnaEt
         {
             base.Draw(gameTime);
             sb.Begin();
-            Rectangle rect = new Rectangle(frameSize.X * currentFrame.X, frameSize.Y * currentFrame.Y, frameSize.X, frameSize.Y);
-            sb.Draw(texture, new Vector2(pos.X + 64, pos.Y + 50), rect, Color.White, 0, Vector2.Zero, 1, SpriteEffects.None, 0);
+            Rectangle frame = new Rectangle(frameSize.X * currentFrame.X, frameSize.Y * currentFrame.Y, frameSize.X, frameSize.Y);
+            boundingBox = new Rectangle(pos.X + 64, pos.Y + 50, frameSize.X, frameSize.Y);
+            sb.Draw(texture, boundingBox, frame, Color.White, 0, Vector2.Zero, SpriteEffects.None, 0);
+            //sb.Draw(texture, new Vector2(pos.X + 64, pos.Y + 50), rect, Color.White, 0, Vector2.Zero, 1, SpriteEffects.None, 0);
             sb.End();
         }
 
