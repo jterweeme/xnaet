@@ -15,7 +15,7 @@ namespace XnaEt
         protected override void LoadContent()
         {
             base.LoadContent();
-            texture = Game.Content.Load<Texture2D>("elliot-run");
+            texture = Game.Content.Load<Texture2D>("elliott-run");
         }
 
         public override void Draw(GameTime gameTime)

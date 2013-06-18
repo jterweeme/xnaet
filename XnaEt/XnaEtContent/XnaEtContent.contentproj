@@ -286,8 +286,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="elliot-run.png">
-      <Name>elliot-run</Name>
+    <Compile Include="elliott-run.png">
+      <Name>elliott-run</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
