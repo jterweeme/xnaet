@@ -5,6 +5,7 @@ namespace XnaEt
 {
     public abstract class Pit : DrawableGameComponent
     {
+        protected int nummer;
         Texture2D dinges;
         protected Texture2D background;
         SpriteBatch sb;
@@ -21,11 +22,20 @@ namespace XnaEt
             this.asset = asset;
         }
 
+        public int getNummer()
+        {
+            return nummer;
+        }
+
         public virtual int checkPitFall(Point pos)
         {   return -1;
         }
 
         public virtual PitFall getPitFall()
+        {   return null;
+        }
+
+        public virtual PitFall getPitFall(int pit)
         {   return null;
         }
 
@@ -56,6 +66,10 @@ namespace XnaEt
 
         public virtual bool hasPiece()
         {   return false;
+        }
+
+        public virtual void removePiece()
+        {
         }
 
         public virtual Piece getPiece()

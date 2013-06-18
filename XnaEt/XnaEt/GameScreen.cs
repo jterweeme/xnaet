@@ -100,13 +100,14 @@ namespace XnaEt
 
         public void goPitFall(int pit)
         {
-            System.Console.Error.WriteLine(pit);
+            //System.Console.Error.WriteLine(pit);
             scientist.Visible = false;
             elliot.Visible = false;
             agent.Visible = false;
             player.Position = new Point(250, 40);
             player.setPitLocation(true);
-            PitFall dePit = currentPit.getPitFall();
+            PitFall dePit = currentPit.getPitFall(pit);
+            System.Console.Error.WriteLine(dePit.getNummer());
             Piece piece = piecePlaces.getPieceFromPlace(pit);
 
             if (piece != null)
@@ -124,7 +125,8 @@ namespace XnaEt
                 if (player.getBoundingBox().Intersects(piece.getBoundingBox()))
                 {
                     System.Console.Error.WriteLine("Bingo!");
-                    player.addPiece(piecePlaces.fetchPieceFrom(currentPit.checkPitFall(player.getPos())));
+                    player.addPiece(piecePlaces.fetchPieceFrom(currentPit.getNummer()));
+                    currentPit.removePiece();
                     System.Console.Error.WriteLine(piecePlaces);
                 }
             }

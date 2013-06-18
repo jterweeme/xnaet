@@ -38,6 +38,11 @@ namespace XnaEt
         {   return new PitFall(this);
         }
 
+        public override PitFall getPitFall(int pit)
+        {
+            return new PitFall(this, pit);
+        }
+
         public int whichPit(Point pos)
         {
             if (pos.X < 240 && pos.Y < 120)

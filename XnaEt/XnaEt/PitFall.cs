@@ -11,6 +11,12 @@ namespace XnaEt
         {   this.originalPit = originalPit;
         }
 
+        public PitFall(Pit originalPit, int nummer) : base("pitfall")
+        {
+            this.originalPit = originalPit;
+            this.nummer = nummer;
+        }
+
         protected override void LoadContent()
         {
             base.LoadContent();
@@ -50,6 +56,12 @@ namespace XnaEt
 
         public override bool hasPiece()
         {   return (piece != null);
+        }
+
+        public override void removePiece()
+        {
+            EtGame.instanz.Components.Remove(piece);
+            piece = null;
         }
     }
 }
