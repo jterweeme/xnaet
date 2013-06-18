@@ -27,18 +27,6 @@ namespace XnaEt
         Point currentFrame = new Point (0,0);
         int energy;
 
-        public Point Position
-        {
-            get
-            {
-                return pos;
-            }
-            set
-            {
-                pos = value;
-            }
-        }
-
         public Player() : base(EtGame.instanz)
         {
             items = new List<Piece>();
@@ -103,6 +91,11 @@ namespace XnaEt
         public Point getPos()
         {
             return pos;
+        }
+
+        public void setPos(Point pos)
+        {
+            this.pos = pos;
         }
 
         public void moveUp()

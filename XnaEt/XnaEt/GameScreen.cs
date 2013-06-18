@@ -57,7 +57,7 @@ namespace XnaEt
             agent.Visible = false;
             player.setPitLocation(false);
             setCurrentPit(currentPit.getNorth());
-            player.Position = new Point(player.getPos().X, 200);
+            player.setPos(new Point(player.getPos().X, 200));
         }
 
         private void goWest()
@@ -67,7 +67,7 @@ namespace XnaEt
             agent.Visible = false;
             player.setPitLocation(false);
             setCurrentPit(currentPit.getWest());
-            player.Position = new Point(460, player.getPos().Y);
+            player.setPos(new Point(460, player.getPos().Y));
         }
 
         private void goEast()
@@ -77,7 +77,7 @@ namespace XnaEt
             agent.Visible = false;
             player.setPitLocation(false);
             setCurrentPit(currentPit.getEast());
-            player.Position = new Point(20, player.getPos().Y);
+            player.setPos(new Point(20, player.getPos().Y));
         }
 
         private void goSouth()
@@ -87,7 +87,7 @@ namespace XnaEt
             agent.Visible = false;
             player.setPitLocation(false);
             setCurrentPit(currentPit.getSouth());
-            player.Position = new Point(player.getPos().X, 15);
+            player.setPos(new Point(player.getPos().X, 15));
         }
 
         public void goPitFall(int pit)
@@ -95,7 +95,7 @@ namespace XnaEt
             scientist.Visible = false;
             elliot.Visible = false;
             agent.Visible = false;
-            player.Position = new Point(250, 40);
+            player.setPos(new Point(250, 40));
             player.setPitLocation(true);
             PitFall dePit = currentPit.getPitFall(pit);
             System.Console.Error.WriteLine(dePit.getNummer());
@@ -171,9 +171,9 @@ namespace XnaEt
             findPiece();
 
             // Give the Foes the acutal position of ET
-            agent.ETPosition = player.Position;
-            elliot.ETPosition = player.Position;
-            scientist.ETPosition = player.Position;
+            agent.ETPosition = player.getPos();
+            elliot.ETPosition = player.getPos();
+            scientist.ETPosition = player.getPos();
         }
     }
 }
