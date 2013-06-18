@@ -32,11 +32,20 @@ namespace XnaEt
             switch (piecePlaatsen[pitfall])
             {
                 case 1:
-                case 2:
-                case 3:
                     return new Piece("piece1");
+                case 2:
+                    return new Piece("piece2");
+                case 3:
+                    return new Piece("piece3");
             }
             return null;
+        }
+
+        public Piece fetchPieceFrom(int pitfall)
+        {
+            Piece piece = getPieceFromPlace(pitfall);
+            piecePlaatsen[pitfall] = 0;
+            return piece;
         }
 
         public override string ToString()

@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -14,6 +15,7 @@ namespace XnaEt
         SpriteBatch sb;
         Point pos;
         Rectangle boundingBox;
+        List<Piece> items;
         int animation_speed = 4;
         int animation_count = 0;
         bool freezeeVertical = false;
@@ -39,10 +41,21 @@ namespace XnaEt
 
         public Player() : base(EtGame.instanz)
         {
+            items = new List<Piece>();
             boundingBox = new Rectangle(300, 200, 33, 30);
             DrawOrder = 9999;
             pos = new Point(300, 200);
             energy = 9999;
+        }
+
+        public Rectangle getBoundingBox()
+        {
+            return boundingBox;
+        }
+
+        public void addPiece(Piece piece)
+        {
+            items.Add(piece);
         }
 
         protected override void LoadContent()

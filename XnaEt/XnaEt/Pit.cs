@@ -22,13 +22,11 @@ namespace XnaEt
         }
 
         public virtual int checkPitFall(Point pos)
-        {
-            return -1;
+        {   return -1;
         }
 
         public virtual PitFall getPitFall()
-        {
-            return null;
+        {   return null;
         }
 
         protected override void LoadContent()
@@ -54,6 +52,14 @@ namespace XnaEt
             Rectangle positie = new Rectangle(pos.X, pos.Y, 1, 1);
             dinges.GetData<Color>(0, positie, retrievedColor, 0, 1);
             return retrievedColor[0].A > 100;
+        }
+
+        public virtual bool hasPiece()
+        {   return false;
+        }
+
+        public virtual Piece getPiece()
+        {   return null;
         }
     }
 }

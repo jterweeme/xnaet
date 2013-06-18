@@ -25,6 +25,11 @@ namespace XnaEt
             texture = Game.Content.Load<Texture2D>(asset);
         }
 
+        public Rectangle getBoundingBox()
+        {
+            return boundingBox;
+        }
+
         public override void Draw(GameTime gameTime)
         {
             base.Draw(gameTime);

@@ -127,6 +127,20 @@ namespace XnaEt
             header.setZone(10);
         }
 
+        public void findPiece()
+        {
+            if (currentPit.hasPiece())
+            {
+                Piece piece = currentPit.getPiece();
+                if (player.getBoundingBox().Intersects(piece.getBoundingBox()))
+                {
+                    System.Console.Error.WriteLine("Bingo!");
+                    player.addPiece(piecePlaces.fetchPieceFrom(currentPit.checkPitFall(player.getPos())));
+                    System.Console.Error.WriteLine(piecePlaces);
+                }
+            }
+        }
+
         public override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
@@ -170,6 +184,8 @@ namespace XnaEt
 
             if (kb.IsKeyUp(Keys.LeftControl))
                 this.ctrlKeyActive = false;
+
+            findPiece();
 
             // Give the Foes the acutal position of ET
             agent.ETPosition = player.Position;

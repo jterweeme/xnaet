@@ -5,10 +5,10 @@ namespace XnaEt
     {
         // de pit van waar je in de kuil bent gevallen
         private Pit originalPit;
+        private Piece piece;
 
         public PitFall(Pit originalPit) : base("pitfall")
-        {
-            this.originalPit = originalPit;
+        {   this.originalPit = originalPit;
         }
 
         protected override void LoadContent()
@@ -20,7 +20,12 @@ namespace XnaEt
 
         public void addPiece(Piece piece)
         {
+            this.piece = piece;
             EtGame.instanz.Components.Add(piece);
+        }
+
+        public override Piece getPiece()
+        {   return piece;
         }
 
         public override Pit getNorth()
@@ -41,6 +46,10 @@ namespace XnaEt
 
         public override int getZone(Point pos)
         {   return Zones.PITFALL;
+        }
+
+        public override bool hasPiece()
+        {   return (piece != null);
         }
     }
 }
