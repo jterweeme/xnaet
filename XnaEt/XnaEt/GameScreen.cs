@@ -128,6 +128,7 @@ namespace XnaEt
                     player.addPiece(piecePlaces.fetchPieceFrom(currentPit.getNummer()));
                     currentPit.removePiece();
                     System.Console.Error.WriteLine(piecePlaces);
+                    header.setPieces(player.getItems().Count);
                 }
             }
         }

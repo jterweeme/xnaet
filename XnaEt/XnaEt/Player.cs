@@ -245,5 +245,10 @@ namespace XnaEt
         {
             this.inPit = inPit;
         }
+
+        public List<Piece> getItems()
+        {
+            return items;
+        }
     }
 }
