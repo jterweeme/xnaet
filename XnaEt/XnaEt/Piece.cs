@@ -8,12 +8,14 @@ namespace XnaEt
     {
         Texture2D texture;
         SpriteBatch sb;
+        Rectangle boundingBox;
         string asset;
 
         public Piece(string asset) : base(EtGame.instanz)
         {
             DrawOrder = 9999;
             this.asset = asset;
+            boundingBox = new Rectangle(220, 240, 42, 42);
         }
 
         protected override void LoadContent()
@@ -27,7 +29,7 @@ namespace XnaEt
         {
             base.Draw(gameTime);
             sb.Begin();
-            sb.Draw(texture, new Rectangle(220, 240, 42, 42), Color.White);
+            sb.Draw(texture, boundingBox, Color.White);
             sb.End();
         }
     }
