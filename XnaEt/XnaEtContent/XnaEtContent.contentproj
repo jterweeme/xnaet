@@ -143,8 +143,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="elliot.png">
-      <Name>elliot</Name>
+    <Compile Include="elliott.png">
+      <Name>elliott</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
