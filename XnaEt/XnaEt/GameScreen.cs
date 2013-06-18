@@ -68,7 +68,7 @@ namespace XnaEt
             elliot.Visible = false;
             agent.Visible = false;
             player.setPitLocation(false);
-            CurrentPit = currentPit.getNorth();
+            setCurrentPit(currentPit.getNorth());
             player.Position = new Point(player.getPos().X, 200);
         }
 
@@ -78,7 +78,7 @@ namespace XnaEt
             elliot.Visible = false;
             agent.Visible = false;
             player.setPitLocation(false);
-            CurrentPit = currentPit.getWest();
+            setCurrentPit(currentPit.getWest());
             player.Position = new Point(460, player.getPos().Y);
         }
 
@@ -88,7 +88,7 @@ namespace XnaEt
             elliot.Visible = false;
             agent.Visible = false;
             player.setPitLocation(false);
-            CurrentPit = currentPit.getEast();
+            setCurrentPit(currentPit.getEast());
             player.Position = new Point(20, player.getPos().Y);
         }
 
@@ -98,13 +98,12 @@ namespace XnaEt
             elliot.Visible = false;
             agent.Visible = false;
             player.setPitLocation(false);
-            CurrentPit = currentPit.getSouth();
+            setCurrentPit(currentPit.getSouth());
             player.Position = new Point(player.getPos().X, 15);
         }
 
         public void goPitFall(int pit)
         {
-            //System.Console.Error.WriteLine(pit);
             scientist.Visible = false;
             elliot.Visible = false;
             agent.Visible = false;
@@ -117,7 +116,7 @@ namespace XnaEt
             if (piece != null)
                 dePit.addPiece(piece);
 
-            CurrentPit = dePit;
+            setCurrentPit(dePit);
             header.setZone(10);
         }
 
