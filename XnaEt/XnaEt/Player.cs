@@ -26,9 +26,15 @@ namespace XnaEt
         Point frameSize = new Point(33,30);
         Point currentFrame = new Point (0,0);
         int energy;
+        GameScreen gameScreen;
 
-        public Player() : base(EtGame.instanz)
+        public Player() : this(null)
         {
+        }
+
+        public Player(GameScreen gameScreen) : base(EtGame.instanz)
+        {
+            this.gameScreen = gameScreen;
             items = new List<Piece>();
             boundingBox = new Rectangle(300, 200, 33, 30);
             DrawOrder = 9999;
@@ -192,8 +198,11 @@ namespace XnaEt
             {
                 if (!this.flightReverse && currentFrame.X > 4) 
                 {
-                    if(!this.inPit)
+                    if (!this.inPit)
+                    {
                         this.flightReverse = true;
+                        gameScreen.action();
+                    }
 
                     if (this.freezeeVertical)
                         this.freezeeVertical = false;

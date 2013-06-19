@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
@@ -14,7 +15,9 @@ namespace XnaEt
         Agent agent;
         Scientist scientist;
         Elliott elliot;
+        SoundEffect sndAction;
         bool ctrlKeyActive = false;
+        
 
         public GameScreen()
         {
@@ -29,6 +32,26 @@ namespace XnaEt
             Game.Components.Add(pit);
         }
 
+        public void action()
+        {
+            sndAction.Play();
+            switch (currentPit.getZone(player.getPos()))
+            {
+                case Zones.UP:
+                    goNorth();
+                    break;
+                case Zones.LEFT:
+                    goWest();
+                    break;
+                case Zones.RIGHT:
+                    goEast();
+                    break;
+                case Zones.DOWN:
+                    goSouth();
+                    break;
+            }
+        }
+
         public override void Initialize()
         {
             base.Initialize();
@@ -39,11 +62,12 @@ namespace XnaEt
         {
             base.LoadContent();
             sb = new SpriteBatch(GraphicsDevice);
-            player = new Player();
+            player = new Player(this);
             currentPit = new Forest();
             agent = new Agent();
             elliot = new Elliott();
             scientist = new Scientist();
+            sndAction = Game.Content.Load<SoundEffect>("action");
             EtGame.instanz.Components.Add(player);
             EtGame.instanz.Components.Add(currentPit);
             EtGame.instanz.Components.Add(agent);

@@ -33,7 +33,7 @@ namespace XnaEt
             base.Update(gameTime);
             KeyboardState kb = Keyboard.GetState();
 
-            if (kb.IsKeyDown(Keys.RightControl))
+            if (kb.IsKeyDown(Keys.LeftControl))
             {
                 MediaPlayer.Stop();
                 EtGame.instanz.CurrentScreen = new LandingScreen();
