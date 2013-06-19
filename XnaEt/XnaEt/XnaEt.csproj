@@ -113,6 +113,7 @@
     <Compile Include="Agent.cs" />
     <Compile Include="City.cs" />
     <Compile Include="Elliot.cs" />
+    <Compile Include="EndingScreen.cs" />
     <Compile Include="FlowerPit.cs" />
     <Compile Include="Foe.cs" />
     <Compile Include="Footer.cs" />

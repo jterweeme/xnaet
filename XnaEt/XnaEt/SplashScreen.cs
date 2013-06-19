@@ -36,7 +36,7 @@ namespace XnaEt
             if (kb.IsKeyDown(Keys.LeftControl))
             {
                 MediaPlayer.Stop();
-                EtGame.instanz.CurrentScreen = new LandingScreen();
+                EtGame.instanz.setScreen(new LandingScreen());
             }
         }
     }

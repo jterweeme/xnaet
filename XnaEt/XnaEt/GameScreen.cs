@@ -49,13 +49,19 @@ namespace XnaEt
                 case Zones.DOWN:
                     goSouth();
                     break;
+                case Zones.CALLSHIP:
+                    header.setClock(8);
+                    break;
+                case Zones.LANDING:
+                    EtGame.instanz.setScreen(new EndingScreen());
+                    break;
             }
         }
 
         public override void Initialize()
         {
             base.Initialize();
-            header.setZone(4);
+            header.setZone(Zones.LANDING);
         }
 
         protected override void LoadContent()

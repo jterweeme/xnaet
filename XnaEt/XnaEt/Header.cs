@@ -10,14 +10,18 @@ namespace XnaEt
         SpriteBatch sb;
         List<Texture2D> zones;
         List<Texture2D> pieces;
+        List<Texture2D> clock;
         Texture2D currentZone;
         int itemCount;
+        int clockCount;
 
         public Header() : base(EtGame.instanz)
         {
             itemCount = 0;
+            clockCount = 0;
             zones = new List<Texture2D>();
             pieces = new List<Texture2D>();
+            clock = new List<Texture2D>();
         }
 
         protected override void LoadContent()
@@ -42,6 +46,15 @@ namespace XnaEt
             pieces.Add(Game.Content.Load<Texture2D>("pieces1"));
             pieces.Add(Game.Content.Load<Texture2D>("pieces2"));
             pieces.Add(Game.Content.Load<Texture2D>("pieces3"));
+            clock.Add(Game.Content.Load<Texture2D>("pieces0"));
+            clock.Add(Game.Content.Load<Texture2D>("clock8"));
+            clock.Add(Game.Content.Load<Texture2D>("clock8"));
+            clock.Add(Game.Content.Load<Texture2D>("clock8"));
+            clock.Add(Game.Content.Load<Texture2D>("clock8"));
+            clock.Add(Game.Content.Load<Texture2D>("clock8"));
+            clock.Add(Game.Content.Load<Texture2D>("clock8"));
+            clock.Add(Game.Content.Load<Texture2D>("clock8"));
+            clock.Add(Game.Content.Load<Texture2D>("clock8"));
             currentZone = zones[0];
         }
 
@@ -50,8 +63,11 @@ namespace XnaEt
         }
 
         public void setPieces(int pieces)
-        {
-            itemCount = pieces;
+        {   itemCount = pieces;
+        }
+
+        public void setClock(int n)
+        {   clockCount = n;
         }
 
         public override void Draw(GameTime gameTime)
@@ -61,6 +77,7 @@ namespace XnaEt
             sb.Draw(bgcolor, new Rectangle(0, 14, 640, 30), Color.White);
             sb.Draw(currentZone, new Rectangle(295, 14, 50, 30), Color.White);
             sb.Draw(pieces[itemCount], new Rectangle(150, 14, 51, 30), Color.White);
+            sb.Draw(clock[clockCount], new Rectangle(480, 14, 50, 30), Color.White);
             sb.End();
         }
     }

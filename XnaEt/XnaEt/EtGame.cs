@@ -22,10 +22,15 @@ namespace XnaEt
             }
             set
             {
-                Components.Remove(currentScreen);
-                currentScreen = value;
-                Components.Add(currentScreen);
+                setScreen(value);
             }
+        }
+
+        public void setScreen(Screen screen)
+        {
+            Components.Remove(currentScreen);
+            currentScreen = screen;
+            Components.Add(currentScreen);
         }
 
         public EtGame()
