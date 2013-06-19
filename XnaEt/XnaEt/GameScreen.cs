@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Media;
 
 namespace XnaEt
 {
@@ -48,6 +49,8 @@ namespace XnaEt
             EtGame.instanz.Components.Add(agent);
             EtGame.instanz.Components.Add(elliot);
             EtGame.instanz.Components.Add(scientist);
+            Song spaceShip = Game.Content.Load<Song>("spaceship");
+            MediaPlayer.Play(spaceShip);
         }
 
         private void goNorth()

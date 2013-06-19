@@ -13,7 +13,7 @@ namespace XnaEt
             zones = new int[16];
 
             for (int i = 0; i < 16; i++)
-                zones[i] = random.Next(0, 10);
+                zones[i] = random.Next(0, 12);
         }
 
         public const int TITLE = 0, CANDY_MUNCHING = 1, HUMAN_REPELLANT = 2, CALLSHIP = 3,
