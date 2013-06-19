@@ -119,6 +119,7 @@
     <Compile Include="Forest.cs" />
     <Compile Include="GameScreen.cs" />
     <Compile Include="Header.cs" />
+    <Compile Include="LandingScreen.cs" />
     <Compile Include="OlivePit.cs" />
     <Compile Include="Piece.cs" />
     <Compile Include="PiecePlaces.cs" />

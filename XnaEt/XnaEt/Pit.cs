@@ -44,7 +44,7 @@ namespace XnaEt
             base.LoadContent();
             sb = new SpriteBatch(GraphicsDevice);
             dinges = Game.Content.Load<Texture2D>(asset);
-            background = new Texture2D(GraphicsDevice, 1, 1);    
+            background = new Texture2D(GraphicsDevice, 1, 1);
         }
 
         public override void Draw(GameTime gameTime)

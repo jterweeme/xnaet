@@ -49,8 +49,6 @@ namespace XnaEt
             EtGame.instanz.Components.Add(agent);
             EtGame.instanz.Components.Add(elliot);
             EtGame.instanz.Components.Add(scientist);
-            Song spaceShip = Game.Content.Load<Song>("spaceship");
-            MediaPlayer.Play(spaceShip);
         }
 
         private void goNorth()

@@ -334,7 +334,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="spaceship.png">
-      <Name>spaceship</Name>
+      <Name>spaceship_png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
