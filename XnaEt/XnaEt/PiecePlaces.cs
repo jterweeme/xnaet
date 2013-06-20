@@ -29,7 +29,7 @@ namespace XnaEt
 
         public Piece getPieceFromPlace(int pitfall)
         {
-            switch (piecePlaatsen[pitfall])
+            switch (piecePlaatsen[pitfall - 1])
             {
                 case 1:
                     return new Piece("piece1");
@@ -44,7 +44,7 @@ namespace XnaEt
         public Piece fetchPieceFrom(int pitfall)
         {
             Piece piece = getPieceFromPlace(pitfall);
-            piecePlaatsen[pitfall] = 0;
+            piecePlaatsen[pitfall - 1] = 0;
             return piece;
         }
 

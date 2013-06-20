@@ -19,7 +19,7 @@ namespace XnaEt
         {
             base.LoadContent();
             sb = new SpriteBatch(GraphicsDevice);
-            font = Game.Content.Load<SpriteFont>("SpriteFont1");
+            font = Game.Content.Load<SpriteFont>("bulawayo");
             texture = new Texture2D(GraphicsDevice, 1, 1);
             texture.SetData(new Color[] { Color.CornflowerBlue });
         }
@@ -29,7 +29,7 @@ namespace XnaEt
             base.Draw(gameTime);
             sb.Begin();
             sb.Draw(texture, new Rectangle(0, 334, 640, 40), Color.White);
-            sb.DrawString(font, Text, new Vector2(320 - font.MeasureString(Text).X / 2, 340), Color.White);
+            sb.DrawString(font, Text, new Vector2(320 - font.MeasureString(Text).X / 2, 340), Color.Green);
             sb.End();
         }
     }

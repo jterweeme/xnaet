@@ -51,7 +51,7 @@ namespace XnaEt
                     break;
                 case Zones.CALLSHIP:
 
-                    if (player.getItems().Count == 1)
+                    if (player.getItems().Count == 3)
                         header.setClock(8);
 
                     break;
@@ -60,6 +60,17 @@ namespace XnaEt
                     if (header.getClock() > 0)
                         EtGame.instanz.setScreen(new EndingScreen());
 
+                    break;
+                case Zones.CANDY_MUNCHING:
+                    System.Console.Error.WriteLine("Candy Munching Zone");
+                    break;
+
+                case Zones.HUMAN_REPELLANT:
+                    System.Console.Error.WriteLine("Human Repellant Zone");
+                    break;
+
+                case Zones.PHONE_LOCATION:
+                    System.Console.Error.WriteLine("Reveil locations");
                     break;
             }
         }
@@ -162,7 +173,8 @@ namespace XnaEt
                 Piece piece = currentPit.getPiece();
                 if (player.getBoundingBox().Intersects(piece.getBoundingBox()))
                 {
-                    System.Console.Error.WriteLine("Bingo!");
+                    SoundEffect blieb = Game.Content.Load<SoundEffect>("clocktick");
+                    blieb.Play();
                     player.addPiece(piecePlaces.fetchPieceFrom(currentPit.getNummer()));
                     currentPit.removePiece();
                     System.Console.Error.WriteLine(piecePlaces);

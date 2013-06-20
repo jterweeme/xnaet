@@ -18,7 +18,7 @@ namespace XnaEt
 
         public const int TITLE = 0, CANDY_MUNCHING = 1, HUMAN_REPELLANT = 2, CALLSHIP = 3,
                         LANDING = 4, UP = 5, LEFT = 6, RIGHT = 7,
-                        DOWN = 8, CALLELLIOT = 9, PITFALL = 10;
+                        DOWN = 8, CALLELLIOT = 9, PITFALL = 10, PHONE_LOCATION = 11;
 
         public int getZone(Point pos)
         {
