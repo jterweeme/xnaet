@@ -50,10 +50,16 @@ namespace XnaEt
                     goSouth();
                     break;
                 case Zones.CALLSHIP:
-                    header.setClock(8);
+
+                    if (player.getItems().Count == 1)
+                        header.setClock(8);
+
                     break;
                 case Zones.LANDING:
-                    EtGame.instanz.setScreen(new EndingScreen());
+
+                    if (header.getClock() > 0)
+                        EtGame.instanz.setScreen(new EndingScreen());
+
                     break;
             }
         }

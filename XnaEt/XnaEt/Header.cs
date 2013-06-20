@@ -70,6 +70,10 @@ namespace XnaEt
         {   clockCount = n;
         }
 
+        public int getClock()
+        {   return clockCount;
+        }
+
         public override void Draw(GameTime gameTime)
         {
             base.Draw(gameTime);
