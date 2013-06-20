@@ -7,7 +7,7 @@ namespace XnaEt
     {
         public Elliott()
         {
-            DrawOrder = 9999;
+            DrawOrder = 10001;
             pos = new Point(200, 50);
             frameSize = new Point(16, 38);
         }

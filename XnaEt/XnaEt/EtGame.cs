@@ -24,6 +24,7 @@ namespace XnaEt
 
         public void setScreen(Screen screen)
         {
+            currentScreen.removeContent();
             Components.Remove(currentScreen);
             currentScreen = screen;
             Components.Add(currentScreen);

@@ -42,5 +42,7 @@ namespace XnaEt
             EtGame.instanz.Components.Add(footer);
             base.Initialize();     
         }
+
+        public virtual void removeContent() { }
     }
 }

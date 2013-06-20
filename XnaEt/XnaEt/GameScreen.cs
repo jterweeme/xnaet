@@ -81,6 +81,16 @@ namespace XnaEt
             EtGame.instanz.Components.Add(scientist);
         }
 
+        public override void removeContent()
+        {
+            base.removeContent();
+            EtGame.instanz.Components.Remove(player);
+            EtGame.instanz.Components.Remove(currentPit);
+            EtGame.instanz.Components.Remove(agent);
+            EtGame.instanz.Components.Remove(elliot);
+            EtGame.instanz.Components.Remove(scientist);
+        }
+
         private void goNorth()
         {
             scientist.Visible = false;

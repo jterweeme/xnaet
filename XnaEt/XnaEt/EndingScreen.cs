@@ -11,6 +11,8 @@ namespace XnaEt
     {
         protected Texture2D background;
         Texture2D house;
+        Elliott elliot;
+        Player player;
 
         public EndingScreen()
         {
@@ -30,6 +32,14 @@ namespace XnaEt
             background = new Texture2D(GraphicsDevice, 1, 1);
             background.SetData(new Color[] { new Color(0, 28, 136) });
             house = Game.Content.Load<Texture2D>("house");
+
+            player = new Player();
+            elliot = new Elliott();
+
+            elliot.Visible = true;
+
+            EtGame.instanz.Components.Add(player);
+            EtGame.instanz.Components.Add(elliot);
         }
 
         public override void Draw(GameTime gameTime)

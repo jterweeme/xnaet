@@ -11,7 +11,7 @@ namespace XnaEt
         protected Point frameSize = new Point(32, 57);
         protected Point currentFrame = new Point(0, 0);
 
-        protected Point et_pos;
+        protected Point et_pos = new Point(0,0);
 
         protected int animationSpeed = 12;
         protected int animationCount = 0;
