@@ -1,4 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
+
 namespace XnaEt
 {
     public class PitFall : Pit
@@ -22,6 +24,8 @@ namespace XnaEt
             base.LoadContent();
             EtGame.instanz.CurrentScreen.setBgColor(new Color(0, 0, 0));
             background.SetData(new Color[] { new Color(170, 170, 170) });
+            SoundEffect sndFall = Game.Content.Load<SoundEffect>("fall");
+            sndFall.Play();
         }
 
         public void addPiece(Piece piece)
