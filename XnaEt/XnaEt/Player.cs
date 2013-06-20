@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Audio;
 
 namespace XnaEt
 {
@@ -27,6 +28,7 @@ namespace XnaEt
         Point currentFrame = new Point (0,0);
         int energy;
         GameScreen gameScreen;
+        SoundEffect step1;
 
         public Player() : this(null)
         {
@@ -61,6 +63,7 @@ namespace XnaEt
             left_neck_up = Game.Content.Load<Texture2D>("links");
             right_neck_up = Game.Content.Load<Texture2D>("right-neck-up");
             texture = links;
+            step1 = Game.Content.Load<SoundEffect>("step1");
         }
 
         public override void Update(GameTime gameTime)
