@@ -16,7 +16,7 @@ namespace XnaEt
 
         public EndingScreen()
         {
-            DrawOrder = 10000;
+            DrawOrder = 9999;
         }
 
         public override void Initialize()
@@ -37,6 +37,7 @@ namespace XnaEt
             elliot = new Elliott();
 
             elliot.Visible = true;
+            elliot.endScreen = true;
 
             EtGame.instanz.Components.Add(player);
             EtGame.instanz.Components.Add(elliot);
