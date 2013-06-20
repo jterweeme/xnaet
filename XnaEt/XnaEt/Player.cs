@@ -72,7 +72,7 @@ namespace XnaEt
 
                 if (this.inPit && this.pos.Y < 206 && !this.flightMode)
                 {
-                    this.pos.Y += 1;
+                    this.pos.Y += 2;
 
                     if (!this.freezeeVertical)
                         this.freezeeVertical = true;
