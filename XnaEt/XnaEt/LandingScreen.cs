@@ -53,7 +53,7 @@ namespace XnaEt
             spaceshipY++;
 
             if (++counter > 100)
-                EtGame.instanz.CurrentScreen = new GameScreen();
+                EtGame.instanz.setScreen(new GameScreen());
         }
     }
 }

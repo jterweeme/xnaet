@@ -20,10 +20,6 @@ namespace XnaEt
             {
                 return currentScreen;
             }
-            set
-            {
-                setScreen(value);
-            }
         }
 
         public void setScreen(Screen screen)

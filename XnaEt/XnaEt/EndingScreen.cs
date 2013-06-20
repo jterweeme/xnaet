@@ -10,6 +10,12 @@ namespace XnaEt
     public class EndingScreen : Screen
     {
         protected Texture2D background;
+        Texture2D house;
+
+        public EndingScreen()
+        {
+            DrawOrder = 10000;
+        }
 
         public override void Initialize()
         {
@@ -23,6 +29,7 @@ namespace XnaEt
             setBgColor(new Color(51, 26, 163));
             background = new Texture2D(GraphicsDevice, 1, 1);
             background.SetData(new Color[] { new Color(0, 28, 136) });
+            house = Game.Content.Load<Texture2D>("house");
         }
 
         public override void Draw(GameTime gameTime)
@@ -30,6 +37,7 @@ namespace XnaEt
             base.Draw(gameTime);
             sb.Begin();
             sb.Draw(background, new Rectangle(64, 58, 512, 260), Color.White);
+            sb.Draw(house, new Rectangle(64, 58, 512, 260), Color.White);
             sb.End();
         }
     }
