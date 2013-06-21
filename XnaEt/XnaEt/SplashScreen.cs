@@ -19,6 +19,7 @@ namespace XnaEt
             base.LoadContent();
             footer.Text = "(c)2013 Jasper tari Weeme";
             sb = new SpriteBatch(GraphicsDevice);
+            setInnerBackground(new Color(0, 0, 148));
             splash = Game.Content.Load<Texture2D>("title");
             titelSong = Game.Content.Load<Song>("titelsong");
             MediaPlayer.Play(titelSong);

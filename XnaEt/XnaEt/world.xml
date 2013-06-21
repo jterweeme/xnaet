@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<world>
+  <pit id="forest">
+    <outer_background>#004400</outer_background>
+    <inner_background>#527e2d</inner_background>
+    <west ref="olivepit"></west>
+  </pit>
+  <pit id="olivepit">
+    <outer_background>#004400</outer_background>
+    <inner_background>#527e2d</inner_background>
+  </pit>
+  <pit id="flowerpit">
+    <outer_background>#004400</outer_background>
+    <inner_background>#527e2d</inner_background>
+  </pit>
+  <pit id="snakepit">
+    <outer_background>#004400</outer_background>
+    <inner_background>#527e2d</inner_background>
+  </pit>
+  <pit id="tarpit">
+    <outer_background>#004400</outer_background>
+    <inner_background>#527e2d</inner_background>
+  </pit>
+  <pit id="city">
+    <outer_background>#004400</outer_background>
+    <inner_background>#527e2d</inner_background>
+  </pit>
+</world>

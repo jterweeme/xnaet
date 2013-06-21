@@ -1,0 +1,2 @@
+﻿<!ELEMENT world (pit)>
+<!ELEMENT pit (#PCDATA)>
