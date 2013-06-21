@@ -87,7 +87,7 @@ namespace XnaEt
             base.LoadContent();
             sb = new SpriteBatch(GraphicsDevice);
             player = new Player(this);
-            currentPit = new Forest();
+            currentPit = new XmlPit();
             agent = new Agent();
             elliot = new Elliott();
             scientist = new Scientist();

@@ -19,7 +19,8 @@ namespace XnaEt
         }
 
         public override Pit getNorth()
-        {   return new Forest();
+        {
+            return new XmlPit("forest");
         }
 
         public override Pit getWest()

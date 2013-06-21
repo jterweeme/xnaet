@@ -1,2 +1,13 @@
-﻿<!ELEMENT world (pit)>
-<!ELEMENT pit (#PCDATA)>
+﻿<!ELEMENT world (pit*)>
+  <!ELEMENT pit (outer_background, inner_background, north, west, east, south)>
+    <!ATTLIST pit id ID #IMPLIED>
+    <!ELEMENT outer_background (#PCDATA)>
+    <!ELEMENT inner_background (#PCDATA)>
+    <!ELEMENT north (#PCDATA)>
+      <!ATTLIST north ref IDREF #IMPLIED>
+    <!ELEMENT west (#PCDATA)>
+      <!ATTLIST west ref IDREF #IMPLIED>
+    <!ELEMENT east (#PCDATA)>
+      <!ATTLIST east ref IDREF #IMPLIED>
+    <!ELEMENT south (#PCDATA)>
+      <!ATTLIST south ref IDREF #IMPLIED>

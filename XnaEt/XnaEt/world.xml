@@ -1,28 +1,52 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE world SYSTEM "world.dtd">
 <world>
   <pit id="forest">
     <outer_background>#004400</outer_background>
     <inner_background>#527e2d</inner_background>
+    <north ref="tarpit"></north>
     <west ref="olivepit"></west>
+    <east ref="snakepit"></east>
+    <south ref="flowerpit"></south>
   </pit>
   <pit id="olivepit">
     <outer_background>#004400</outer_background>
     <inner_background>#527e2d</inner_background>
+    <north ref="forest"></north>
+    <west ref="tarpit"></west>
+    <east ref="flowerpit"></east>
+    <south ref="city"></south>
   </pit>
   <pit id="flowerpit">
     <outer_background>#004400</outer_background>
     <inner_background>#527e2d</inner_background>
+    <north ref="forest"></north>
+    <west ref="olivepit"></west>
+    <east ref="snakepit"></east>
+    <south ref="city"></south>
   </pit>
   <pit id="snakepit">
     <outer_background>#004400</outer_background>
     <inner_background>#527e2d</inner_background>
+    <north ref="forest"></north>
+    <west ref="flowerpit"></west>
+    <east ref="tarpit"></east>
+    <south ref="city"></south>
   </pit>
   <pit id="tarpit">
     <outer_background>#004400</outer_background>
     <inner_background>#527e2d</inner_background>
+    <north ref="forest"></north>
+    <west ref="snakepit"></west>
+    <east ref="olivepit"></east>
+    <south ref="city"></south>
   </pit>
   <pit id="city">
     <outer_background>#004400</outer_background>
     <inner_background>#527e2d</inner_background>
+    <north ref="tarpit"></north>
+    <west ref="snakepit"></west>
+    <east ref="olivepit"></east>
+    <south ref="flowerpit"></south>
   </pit>
 </world>
