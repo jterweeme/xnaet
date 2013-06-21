@@ -79,6 +79,7 @@ namespace XnaEt
         {
             base.Initialize();
             header.setZone(Zones.LANDING);
+            footer.setFont("bulawayo");
         }
 
         protected override void LoadContent()

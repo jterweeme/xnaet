@@ -34,6 +34,7 @@ namespace XnaEt
             background = new Texture2D(GraphicsDevice, 1, 1);
             background.SetData(new Color[] { new Color(82, 126, 45) });
             MediaPlayer.Play(titelSong);
+            footer.setFont("bulawayo");
         }
 
         public override void Draw(GameTime gameTime)

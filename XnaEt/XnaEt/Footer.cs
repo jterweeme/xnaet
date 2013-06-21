@@ -11,17 +11,21 @@ namespace XnaEt
         SpriteFont font;
 
         public Footer() : base(EtGame.instanz)
-        {
-            Text = "";
+        {   Text = "";
         }
 
         protected override void LoadContent()
         {
             base.LoadContent();
             sb = new SpriteBatch(GraphicsDevice);
-            font = Game.Content.Load<SpriteFont>("bulawayo");
+            font = Game.Content.Load<SpriteFont>("spriteFont1");
             texture = new Texture2D(GraphicsDevice, 1, 1);
             texture.SetData(new Color[] { Color.CornflowerBlue });
+        }
+
+        public void setFont(string asset)
+        {
+            this.font = Game.Content.Load<SpriteFont>(asset);
         }
 
         public override void Draw(GameTime gameTime)
