@@ -7,7 +7,6 @@ namespace XnaEt
     {
         protected int nummer;
         Texture2D dinges;
-        protected Texture2D background;
         SpriteBatch sb;
         public abstract Pit getNorth();
         public abstract Pit getWest();
@@ -44,14 +43,12 @@ namespace XnaEt
             base.LoadContent();
             sb = new SpriteBatch(GraphicsDevice);
             dinges = Game.Content.Load<Texture2D>(asset);
-            background = new Texture2D(GraphicsDevice, 1, 1);
         }
 
         public override void Draw(GameTime gameTime)
         {
             base.Draw(gameTime);
             sb.Begin();
-            sb.Draw(background, new Rectangle(64, 58, 512, 260), Color.White);
             sb.Draw(dinges, new Rectangle(64, 58, 512, 260), Color.White);
             sb.End();
         }

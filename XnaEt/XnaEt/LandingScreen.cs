@@ -11,12 +11,11 @@ namespace XnaEt
     {
         Texture2D splash;
         Song titelSong;
-        protected Texture2D background;
         Texture2D spaceship;
         int spaceshipY;
         int counter;
 
-        public LandingScreen()
+        public LandingScreen() : base(null)
         {
             spaceshipY = 10;
             counter = 0;
@@ -31,8 +30,7 @@ namespace XnaEt
             titelSong = Game.Content.Load<Song>("spaceship");
             spaceship = Game.Content.Load<Texture2D>("spaceship_png");
             setBgColor(new Color(0, 64, 0));
-            background = new Texture2D(GraphicsDevice, 1, 1);
-            background.SetData(new Color[] { new Color(82, 126, 45) });
+            setInnerBackground(new Color(82, 126, 45));
             MediaPlayer.Play(titelSong);
             footer.setFont("bulawayo");
         }
@@ -41,7 +39,6 @@ namespace XnaEt
         {
             base.Draw(gameTime);
             sb.Begin();
-            sb.Draw(background, new Rectangle(64, 58, 512, 260), Color.White);
             sb.Draw(splash, new Rectangle(64, 58, 512, 260), Color.White);
             sb.Draw(spaceship, new Rectangle(288, spaceshipY, 64, 64), Color.White);
             sb.End();
@@ -54,7 +51,7 @@ namespace XnaEt
             spaceshipY++;
 
             if (++counter > 100)
-                EtGame.instanz.setScreen(new GameScreen());
+                EtGame.instanz.setScreen(new GameScreen(theGame));
         }
     }
 }

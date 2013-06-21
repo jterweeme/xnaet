@@ -10,6 +10,10 @@ namespace XnaEt
         Texture2D splash;
         Song titelSong;
 
+        public SplashScreen() : base(null)
+        {
+        }
+
         protected override void LoadContent()
         {
             base.LoadContent();

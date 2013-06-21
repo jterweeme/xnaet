@@ -14,8 +14,8 @@ namespace XnaEt
         protected override void LoadContent()
         {
             base.LoadContent();
-            EtGame.instanz.CurrentScreen.setBgColor(new Color(0, 0, 96));
-            background.SetData(new Color[] { new Color(45, 50, 184) });
+            EtGame.instanz.getScreen().setBgColor(new Color(0, 0, 96));
+            EtGame.instanz.getScreen().setInnerBackground(new Color(45, 50, 184));
         }
 
         public override Pit getNorth()

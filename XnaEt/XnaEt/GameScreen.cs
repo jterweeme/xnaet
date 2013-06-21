@@ -19,7 +19,7 @@ namespace XnaEt
         bool ctrlKeyActive = false;
         
 
-        public GameScreen()
+        public GameScreen(Game theGame) : base(theGame)
         {
             piecePlaces = new PiecePlaces();
             System.Console.Error.WriteLine(piecePlaces);

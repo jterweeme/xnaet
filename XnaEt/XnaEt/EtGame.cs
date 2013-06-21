@@ -14,12 +14,9 @@ namespace XnaEt
         GraphicsDeviceManager graphics;
         Screen currentScreen;
 
-        public Screen CurrentScreen
+        public Screen getScreen()
         {
-            get
-            {
-                return currentScreen;
-            }
+            return currentScreen;
         }
 
         public void setScreen(Screen screen)
@@ -35,7 +32,7 @@ namespace XnaEt
             graphics = new GraphicsDeviceManager(this);
             graphics.PreferredBackBufferWidth = 640;
             graphics.PreferredBackBufferHeight = 480;
-            graphics.IsFullScreen = true;
+            //graphics.IsFullScreen = true;
             Content.RootDirectory = "Content";
         }
 

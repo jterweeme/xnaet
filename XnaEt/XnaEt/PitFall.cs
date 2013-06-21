@@ -22,8 +22,8 @@ namespace XnaEt
         protected override void LoadContent()
         {
             base.LoadContent();
-            EtGame.instanz.CurrentScreen.setBgColor(new Color(0, 0, 0));
-            background.SetData(new Color[] { new Color(170, 170, 170) });
+            EtGame.instanz.getScreen().setBgColor(new Color(0, 0, 0));
+            EtGame.instanz.getScreen().setInnerBackground(new Color(170, 170, 170));
             SoundEffect sndFall = Game.Content.Load<SoundEffect>("fall");
             sndFall.Play();
         }

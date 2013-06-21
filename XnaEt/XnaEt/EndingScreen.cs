@@ -14,7 +14,7 @@ namespace XnaEt
         Elliott elliot;
         Player player;
 
-        public EndingScreen()
+        public EndingScreen() : base(null)
         {
             DrawOrder = 9999;
         }
