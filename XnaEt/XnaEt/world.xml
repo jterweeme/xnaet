@@ -16,6 +16,10 @@
     <west ref="tarpit"></west>
     <east ref="flowerpit"></east>
     <south ref="city"></south>
+    <pitfall>48,48,160,40</pitfall>
+    <pitfall>304,48,160,40</pitfall>
+    <pitfall>48,176,160,40</pitfall>
+    <pitfall>304,176,160,40</pitfall>
   </pit>
   <pit id="flowerpit">
     <outer_background>#004400</outer_background>
@@ -42,8 +46,8 @@
     <south ref="city"></south>
   </pit>
   <pit id="city">
-    <outer_background>#004400</outer_background>
-    <inner_background>#527e2d</inner_background>
+    <outer_background>#000060</outer_background>
+    <inner_background>#2d32b8</inner_background>
     <north ref="tarpit"></north>
     <west ref="snakepit"></west>
     <east ref="olivepit"></east>

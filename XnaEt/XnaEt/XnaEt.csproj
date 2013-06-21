@@ -137,6 +137,7 @@
     <Content Include="GameThumbnail.png" />
     <Content Include="world.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>

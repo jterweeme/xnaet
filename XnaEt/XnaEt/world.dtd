@@ -1,5 +1,5 @@
 ﻿<!ELEMENT world (pit*)>
-  <!ELEMENT pit (outer_background, inner_background, north, west, east, south)>
+  <!ELEMENT pit (outer_background, inner_background, north, west, east, south, pitfall*)>
     <!ATTLIST pit id ID #IMPLIED>
     <!ELEMENT outer_background (#PCDATA)>
     <!ELEMENT inner_background (#PCDATA)>
@@ -11,3 +11,4 @@
       <!ATTLIST east ref IDREF #IMPLIED>
     <!ELEMENT south (#PCDATA)>
       <!ATTLIST south ref IDREF #IMPLIED>
+    <!ELEMENT pitfall (#PCDATA)>

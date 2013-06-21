@@ -67,5 +67,26 @@ namespace XnaEt
         {
             return zones.getZone(pos);
         }
+
+        public bool checkOnPit(XElement pitfall)
+        {
+            return true;
+        }
+
+        public int whichPit(Point pos)
+        {
+            var pit = from nm in world.Elements("pit") where (string)nm.Attribute("id") == pitname select nm;
+
+            foreach (XElement pitfall in pit.Elements("pitfall"))
+                if (checkOnPit(pitfall))
+                    Console.WriteLine(pitfall);
+
+            return -1;
+        }
+
+        public override int checkPitFall(Point pos)
+        {
+            return checkCollision2(pos) ? whichPit(pos) : -1;
+        }
     }
 }
