@@ -24,16 +24,15 @@ namespace XnaEt
         }
 
         public void setFont(string asset)
-        {
-            this.font = Game.Content.Load<SpriteFont>(asset);
+        {   this.font = Game.Content.Load<SpriteFont>(asset);
         }
 
         public override void Draw(GameTime gameTime)
         {
             base.Draw(gameTime);
             sb.Begin();
-            sb.Draw(texture, new Rectangle(0, 334, 640, 40), Color.White);
-            sb.DrawString(font, Text, new Vector2(320 - font.MeasureString(Text).X / 2, 340), Color.Green);
+            sb.Draw(texture, new Rectangle(0, 354, 640, 40), Color.White);
+            sb.DrawString(font, Text, new Vector2(320 - font.MeasureString(Text).X / 2, 360), new Color(0, 68, 0));
             sb.End();
         }
     }

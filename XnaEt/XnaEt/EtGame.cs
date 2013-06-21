@@ -34,7 +34,8 @@ namespace XnaEt
         {
             graphics = new GraphicsDeviceManager(this);
             graphics.PreferredBackBufferWidth = 640;
-            graphics.PreferredBackBufferHeight = 400;
+            graphics.PreferredBackBufferHeight = 480;
+            graphics.IsFullScreen = true;
             Content.RootDirectory = "Content";
         }
 
