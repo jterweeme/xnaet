@@ -122,6 +122,7 @@
     <Compile Include="Piece.cs" />
     <Compile Include="PiecePlaces.cs" />
     <Compile Include="Pit.cs" />
+    <Compile Include="PitElement.cs" />
     <Compile Include="PitFall.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -129,6 +130,7 @@
     <Compile Include="Scientist.cs" />
     <Compile Include="Screen.cs" />
     <Compile Include="SplashScreen.cs" />
+    <Compile Include="World.cs" />
     <Compile Include="XmlPit.cs" />
     <Compile Include="Zones.cs" />
   </ItemGroup>

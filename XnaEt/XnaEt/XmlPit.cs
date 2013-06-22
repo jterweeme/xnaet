@@ -9,14 +9,13 @@ namespace XnaEt
     public class XmlPit : Pit
     {
         static Zones zones;
-        XElement world;
+        World world;
         string pitname;
 
         public XmlPit(string pitname = "forest") : base(pitname)
         {
             this.pitname = pitname;
-            world = XElement.Load("world.xml");
-            IEnumerable<XElement> pits = world.Elements();
+            world = new World();
 
             if (zones == null)
                 zones = new Zones();
@@ -30,17 +29,16 @@ namespace XnaEt
 
         public override Pit getPit(string direction)
         {
-            var dinges = from nm in world.Elements("pit") where (string)nm.Attribute("id") == pitname select nm;
-            Console.WriteLine(dinges.ElementAt<XElement>(0).Element(direction).Attribute("ref").Value);
-            return new XmlPit(dinges.ElementAt<XElement>(0).Element(direction).Attribute("ref").Value);
+            XElement pit = world.getPitElement(pitname);
+            return new XmlPit(pit.Element(direction).Attribute("ref").Value);
         }
 
         protected override void LoadContent()
         {
             base.LoadContent();
-            var dinges = from nm in world.Elements("pit") where (string)nm.Attribute("id") == pitname select nm;
-            EtGame.instanz.getScreen().setBgColor(getColor(dinges.ElementAt<XElement>(0).Element("outer_background").Value));
-            EtGame.instanz.getScreen().setInnerBackground(getColor(dinges.ElementAt<XElement>(0).Element("inner_background").Value));
+            XElement pit = world.getPitElement(pitname);
+            EtGame.instanz.getScreen().setBgColor(getColor(pit.Element("outer_background").Value));
+            EtGame.instanz.getScreen().setInnerBackground(getColor(pit.Element("inner_background").Value));
         }
 
         public override int getZone(Point pos)
@@ -64,7 +62,7 @@ namespace XnaEt
 
         public int whichPit(Rectangle playerBox)
         {
-            var pit = from nm in world.Elements("pit") where (string)nm.Attribute("id") == pitname select nm;
+            IEnumerable<XElement> pit = world.getPits(pitname);
 
             foreach (XElement pitfall in pit.Elements("pitfall"))
                 if (checkOnPit(pitfall, playerBox))

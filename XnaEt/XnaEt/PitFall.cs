@@ -10,7 +10,8 @@ namespace XnaEt
         private Piece piece;
 
         public PitFall(Pit originalPit) : base("pitfall")
-        {   this.originalPit = originalPit;
+        {
+            this.originalPit = originalPit;
         }
 
         public PitFall(Pit originalPit, int nummer) : base("pitfall")
@@ -35,15 +36,18 @@ namespace XnaEt
         }
 
         public override Piece getPiece()
-        {   return piece;
+        {   
+            return piece;
         }
 
         public override int getZone(Point pos)
-        {   return Zones.PITFALL;
+        {   
+            return Zones.PITFALL;
         }
 
         public override bool hasPiece()
-        {   return (piece != null);
+        {   
+            return (piece != null);
         }
 
         public override void removePiece()

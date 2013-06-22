@@ -59,19 +59,23 @@ namespace XnaEt
         }
 
         public void setZone(int zone)
-        {   currentZone = zones[zone];
+        {
+            currentZone = zones[zone];
         }
 
         public void setPieces(int pieces)
-        {   itemCount = pieces;
+        {
+            itemCount = pieces;
         }
 
         public void setClock(int n)
-        {   clockCount = n;
+        {
+            clockCount = n;
         }
 
         public int getClock()
-        {   return clockCount;
+        {
+            return clockCount;
         }
 
         public override void Draw(GameTime gameTime)
