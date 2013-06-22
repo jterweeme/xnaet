@@ -115,7 +115,7 @@ namespace XnaEt
             elliot.Visible = false;
             agent.Visible = false;
             player.setPitLocation(false);
-            setCurrentPit(currentPit.getNorth());
+            setCurrentPit(currentPit.getPit("north"));
             player.setPos(new Point(player.getPos().X, 200));
         }
 
@@ -125,7 +125,7 @@ namespace XnaEt
             elliot.Visible = false;
             agent.Visible = false;
             player.setPitLocation(false);
-            setCurrentPit(currentPit.getWest());
+            setCurrentPit(currentPit.getPit("west"));
             player.setPos(new Point(460, player.getPos().Y));
         }
 
@@ -135,7 +135,7 @@ namespace XnaEt
             elliot.Visible = false;
             agent.Visible = false;
             player.setPitLocation(false);
-            setCurrentPit(currentPit.getEast());
+            setCurrentPit(currentPit.getPit("east"));
             player.setPos(new Point(20, player.getPos().Y));
         }
 
@@ -145,7 +145,7 @@ namespace XnaEt
             elliot.Visible = false;
             agent.Visible = false;
             player.setPitLocation(false);
-            setCurrentPit(currentPit.getSouth());
+            setCurrentPit(currentPit.getPit("south"));
             player.setPos(new Point(player.getPos().X, 15));
         }
 
@@ -192,7 +192,7 @@ namespace XnaEt
             KeyboardState kb = Keyboard.GetState();
             int pit;
 
-            if ((pit = currentPit.checkPitFall(player.getPos())) >= 0)
+            if ((pit = currentPit.checkPitFall(player.getBoundingBox())) >= 0)
                 goPitFall(pit);
 
             if (kb.IsKeyDown(Keys.Up))

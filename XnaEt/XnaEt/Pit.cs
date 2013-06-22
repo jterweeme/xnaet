@@ -8,12 +8,13 @@ namespace XnaEt
         protected int nummer;
         Texture2D dinges;
         SpriteBatch sb;
-        public abstract Pit getNorth();
-        public abstract Pit getWest();
-        public abstract Pit getEast();
-        public abstract Pit getSouth();
         public abstract int getZone(Point pos);
         string asset;
+
+        public virtual Pit getPit(string direction)
+        {
+            return null;
+        }
 
         public Pit(string asset) : base(EtGame.instanz)
         {
@@ -26,16 +27,19 @@ namespace XnaEt
             return nummer;
         }
 
-        public virtual int checkPitFall(Point pos)
-        {   return -1;
+        public virtual int checkPitFall(Rectangle rect)
+        {   
+            return -1;
         }
 
         public virtual PitFall getPitFall()
-        {   return null;
+        {   
+            return null;
         }
 
         public virtual PitFall getPitFall(int pit)
-        {   return null;
+        {   
+            return null;
         }
 
         protected override void LoadContent()
@@ -53,16 +57,17 @@ namespace XnaEt
             sb.End();
         }
 
-        protected bool checkCollision2(Point pos)
+        protected bool checkCollision(Rectangle playerBox)
         {
             Color[] retrievedColor = new Color[700 * 500];
-            Rectangle positie = new Rectangle(pos.X, pos.Y, 1, 1);
+            Rectangle positie = new Rectangle(playerBox.X - 64, playerBox.Y - 50, 1, 1);
             dinges.GetData<Color>(0, positie, retrievedColor, 0, 1);
             return retrievedColor[0].A > 100;
         }
 
         public virtual bool hasPiece()
-        {   return false;
+        {   
+            return false;
         }
 
         public virtual void removePiece()
@@ -70,7 +75,8 @@ namespace XnaEt
         }
 
         public virtual Piece getPiece()
-        {   return null;
+        {   
+            return null;
         }
     }
 }

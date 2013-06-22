@@ -11,4 +11,9 @@
       <!ATTLIST east ref IDREF #IMPLIED>
     <!ELEMENT south (#PCDATA)>
       <!ATTLIST south ref IDREF #IMPLIED>
-    <!ELEMENT pitfall (#PCDATA)>
+    <!ELEMENT pitfall (x, y, w, h)>
+      <!ATTLIST pitfall id ID #REQUIRED>
+      <!ELEMENT x (#PCDATA)>
+      <!ELEMENT y (#PCDATA)>
+      <!ELEMENT w (#PCDATA)>
+      <!ELEMENT h (#PCDATA)>

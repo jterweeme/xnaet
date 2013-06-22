@@ -28,7 +28,7 @@ namespace XnaEt
             return new Color(dinges.R, dinges.G, dinges.B, dinges.A);
         }
 
-        private Pit getPit(string direction)
+        public override Pit getPit(string direction)
         {
             var dinges = from nm in world.Elements("pit") where (string)nm.Attribute("id") == pitname select nm;
             Console.WriteLine(dinges.ElementAt<XElement>(0).Element(direction).Attribute("ref").Value);
@@ -43,50 +43,39 @@ namespace XnaEt
             EtGame.instanz.getScreen().setInnerBackground(getColor(dinges.ElementAt<XElement>(0).Element("inner_background").Value));
         }
 
-        public override Pit getNorth()
-        {
-            return getPit("north");
-        }
-
-        public override Pit getWest()
-        {
-            return getPit("west");
-        }
-
-        public override Pit getEast()
-        {
-            return getPit("east");
-        }
-
-        public override Pit getSouth()
-        {
-            return getPit("south");
-        }
-
         public override int getZone(Point pos)
         {
             return zones.getZone(pos);
         }
 
-        public bool checkOnPit(XElement pitfall)
+        public bool checkOnPit(XElement pitfall, Rectangle playerBox)
         {
-            return true;
+            return playerBox.Intersects(getRect(pitfall));
         }
 
-        public int whichPit(Point pos)
+        public Rectangle getRect(XElement pitfall)
+        {
+            int x = Convert.ToInt16(pitfall.Element("x").Value);
+            int y = Convert.ToInt16(pitfall.Element("y").Value);
+            int w = Convert.ToInt16(pitfall.Element("w").Value);
+            int h = Convert.ToInt16(pitfall.Element("h").Value);
+            return new Rectangle(x + 64, y + 58, w, h);
+        }
+
+        public int whichPit(Rectangle playerBox)
         {
             var pit = from nm in world.Elements("pit") where (string)nm.Attribute("id") == pitname select nm;
 
             foreach (XElement pitfall in pit.Elements("pitfall"))
-                if (checkOnPit(pitfall))
-                    Console.WriteLine(pitfall);
+                if (checkOnPit(pitfall, playerBox))
+                    Console.WriteLine(getRect(pitfall));
 
             return -1;
         }
 
-        public override int checkPitFall(Point pos)
+        public override int checkPitFall(Rectangle playerBox)
         {
-            return checkCollision2(pos) ? whichPit(pos) : -1;
+            return checkCollision(playerBox) ? whichPit(playerBox) : -1;
         }
     }
 }

@@ -38,22 +38,6 @@ namespace XnaEt
         {   return piece;
         }
 
-        public override Pit getNorth()
-        {   return originalPit;
-        }
-
-        public override Pit getWest()
-        {   return originalPit;
-        }
-
-        public override Pit getEast()
-        {   return originalPit;
-        }
-
-        public override Pit getSouth()
-        {   return originalPit;
-        }
-
         public override int getZone(Point pos)
         {   return Zones.PITFALL;
         }
