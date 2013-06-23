@@ -12,17 +12,16 @@ namespace XnaEt
         {
             piecePlaatsen = new int[20];    // er zijn 20 pits waar je in kan vallen
 
-            // getLength oid moet nog
-            for (int i = 0; i < 20; i++)
+            for (int i = 0; i < piecePlaatsen.Length; i++)
                 piecePlaatsen[i] = 0;
 
             for (int i = 1; i <= 3; i++)
             {
                 Random random = new Random();
-                int x = random.Next(0, 19);
+                int x = random.Next(0, piecePlaatsen.Length - 1);
 
                 while (piecePlaatsen[x] != 0)
-                    x = random.Next(0, 19);
+                    x = random.Next(0, piecePlaatsen.Length - 1);
 
                 piecePlaatsen[x] = i;
             }
