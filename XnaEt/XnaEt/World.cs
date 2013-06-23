@@ -27,6 +27,7 @@ namespace XnaEt
 
         public Pit getPit(string pitname)
         {
+            // moet nog beter
             switch (pitname)
             {
                 case "forest":

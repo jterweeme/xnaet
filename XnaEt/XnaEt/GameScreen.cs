@@ -110,40 +110,36 @@ namespace XnaEt
 
         private void goNorth()
         {
-            scientist.Visible = false;
-            elliot.Visible = false;
-            agent.Visible = false;
-            player.setPitLocation(false);
+            goCommon();
             setCurrentPit(currentPit.getNorth());
             player.setPos(new Point(player.getPos().X, 200));
         }
 
-        private void goWest()
+        public void goCommon()
         {
             scientist.Visible = false;
             elliot.Visible = false;
             agent.Visible = false;
             player.setPitLocation(false);
+        }
+
+        private void goWest()
+        {
+            goCommon();
             setCurrentPit(currentPit.getPit("west"));
             player.setPos(new Point(460, player.getPos().Y));
         }
 
         private void goEast()
         {
-            scientist.Visible = false;
-            elliot.Visible = false;
-            agent.Visible = false;
-            player.setPitLocation(false);
+            goCommon();
             setCurrentPit(currentPit.getPit("east"));
             player.setPos(new Point(20, player.getPos().Y));
         }
 
         private void goSouth()
         {
-            scientist.Visible = false;
-            elliot.Visible = false;
-            agent.Visible = false;
-            player.setPitLocation(false);
+            goCommon();
             setCurrentPit(currentPit.getPit("south"));
             player.setPos(new Point(player.getPos().X, 15));
         }
