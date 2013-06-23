@@ -14,6 +14,7 @@ namespace XnaEt
         Texture2D spaceship;
         int spaceshipY;
         int counter;
+        Texture2D player;
 
         public LandingScreen() : base(EtGame.instanz)
         {
@@ -29,6 +30,7 @@ namespace XnaEt
             splash = Game.Content.Load<Texture2D>("forest");
             titelSong = Game.Content.Load<Song>("spaceship");
             spaceship = Game.Content.Load<Texture2D>("spaceship_png");
+            player = Game.Content.Load<Texture2D>("rechts");
             setBgColor(new Color(0, 64, 0));
             setInnerBackground(new Color(82, 126, 45));
             MediaPlayer.Play(titelSong);
@@ -40,6 +42,7 @@ namespace XnaEt
             base.Draw(gameTime);
             sb.Begin();
             sb.Draw(splash, new Rectangle(64, 58, 512, 260), Color.White);
+            sb.Draw(player, new Rectangle(304, spaceshipY + 17, 32, 30), Color.White);
             sb.Draw(spaceship, new Rectangle(288, spaceshipY, 64, 64), Color.White);
             sb.End();
         }

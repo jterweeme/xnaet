@@ -46,7 +46,7 @@ namespace XnaEt
             items = new List<Piece>();
             boundingBox = new Rectangle(300, 200, 33, 30);
             DrawOrder = 9999;
-            pos = new Point(300, 200);
+            pos = new Point(250, 127);
             energy = 9999;
         }
 
