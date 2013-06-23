@@ -112,6 +112,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Agent.cs" />
+    <Compile Include="Argumenten.cs" />
     <Compile Include="Debugger.cs" />
     <Compile Include="Elliot.cs" />
     <Compile Include="EndingScreen.cs" />

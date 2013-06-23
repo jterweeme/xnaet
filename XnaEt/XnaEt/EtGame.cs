@@ -70,7 +70,9 @@ namespace XnaEt
 
         static void Main(string[] args)
         {
-            EtGame.instanz = new EtGame();
+            Argumenten argumenten = new Argumenten(args);
+            System.Console.WriteLine(argumenten);
+            EtGame.instanz = new EtGame(argumenten.getFullScreen());
             EtGame.instanz.Run();
         }
     }
