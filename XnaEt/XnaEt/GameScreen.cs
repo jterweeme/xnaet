@@ -22,7 +22,6 @@ namespace XnaEt
         public GameScreen(Game theGame) : base(theGame)
         {
             piecePlaces = new PiecePlaces();
-            System.Console.Error.WriteLine(piecePlaces);
         }
 
         public void setCurrentPit(Pit pit)

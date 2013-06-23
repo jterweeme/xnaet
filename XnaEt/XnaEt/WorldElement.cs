@@ -6,11 +6,11 @@ using System.Xml.Linq;
 
 namespace XnaEt
 {
-    public class World
+    public class WorldElement
     {
         XElement world;
 
-        public World(string filename = "world.xml")
+        public WorldElement(string filename = "world.xml")
         {
             world = XElement.Load(filename);
         }

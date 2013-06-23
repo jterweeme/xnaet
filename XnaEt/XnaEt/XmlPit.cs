@@ -9,13 +9,13 @@ namespace XnaEt
     public class XmlPit : Pit
     {
         static Zones zones;
-        World world;
+        WorldElement world;
         string pitname;
 
         public XmlPit(string pitname = "forest") : base(pitname)
         {
             this.pitname = pitname;
-            world = new World();
+            world = new WorldElement();
 
             if (zones == null)
                 zones = new Zones();
