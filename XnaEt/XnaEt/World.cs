@@ -25,6 +25,26 @@ namespace XnaEt
             return pits[i];
         }
 
+        public Pit getPit(string pitname)
+        {
+            switch (pitname)
+            {
+                case "forest":
+                    return getPit(0);
+                case "olivepit":
+                    return getPit(1);
+                case "flowerpit":
+                    return getPit(2);
+                case "snakepit":
+                    return getPit(3);
+                case "tarpit":
+                    return getPit(4);
+                case "city":
+                    return getPit(5);
+            }
+            return null;
+        }
+
         public override string ToString()
         {
             string returnstring = null;

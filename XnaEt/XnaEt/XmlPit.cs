@@ -30,7 +30,7 @@ namespace XnaEt
         public override Pit getPit(string direction)
         {
             XElement pit = world.getPitElement(pitname);
-            return new XmlPit(pit.Element(direction).Attribute("ref").Value);
+            return EtGame.instanz.getWorld().getPit(pit.Element(direction).Attribute("ref").Value);
         }
 
         protected override void LoadContent()
