@@ -12,7 +12,11 @@ namespace XnaEt
             Random random = new Random();
             zones = new int[16];
 
-            for (int i = 0; i < 16; i++)
+            zones[0] = CALLSHIP;
+            zones[1] = PHONE_LOCATION;
+            zones[2] = LANDING;
+
+            for (int i = 3; i < 16; i++)
                 zones[i] = random.Next(0, 12);
         }
 

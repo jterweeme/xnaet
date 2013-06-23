@@ -10,18 +10,19 @@ namespace XnaEt
 
         public PiecePlaces()
         {
-            piecePlaatsen = new int[24];    // er zijn 24 pits waar je in kan vallen
+            piecePlaatsen = new int[20];    // er zijn 20 pits waar je in kan vallen
 
-            for (int i = 0; i < 24; i++)
+            // getLength oid moet nog
+            for (int i = 0; i < 20; i++)
                 piecePlaatsen[i] = 0;
 
             for (int i = 1; i <= 3; i++)
             {
                 Random random = new Random();
-                int x = random.Next(0, 23);
+                int x = random.Next(0, 19);
 
                 while (piecePlaatsen[x] != 0)
-                    x = random.Next(0, 23);
+                    x = random.Next(0, 19);
 
                 piecePlaatsen[x] = i;
             }

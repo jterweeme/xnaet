@@ -44,7 +44,7 @@ namespace XnaEt
         public EtGame(bool fullscreen = false)
         {
             
-            debugger = new Debugger(this);
+            //debugger = new Debugger(this);
             graphics = new GraphicsDeviceManager(this);
             graphics.PreferredBackBufferWidth = 640;
             graphics.PreferredBackBufferHeight = 480;

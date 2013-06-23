@@ -61,15 +61,15 @@ namespace XnaEt
 
                     break;
                 case Zones.CANDY_MUNCHING:
-                    System.Console.Error.WriteLine("Candy Munching Zone");
+                    Console.Error.WriteLine("Candy Munching Zone");
                     break;
 
                 case Zones.HUMAN_REPELLANT:
-                    System.Console.Error.WriteLine("Human Repellant Zone");
+                    Console.Error.WriteLine("Human Repellant Zone");
                     break;
 
                 case Zones.PHONE_LOCATION:
-                    System.Console.Error.WriteLine("Reveil locations");
+                    Console.Error.WriteLine(piecePlaces);
                     break;
             }
         }
