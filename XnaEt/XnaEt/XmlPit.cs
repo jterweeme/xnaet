@@ -36,6 +36,11 @@ namespace XnaEt
         protected override void LoadContent()
         {
             base.LoadContent();
+            setBackground();
+        }
+
+        public override void setBackground()
+        {
             XElement pit = world.getPitElement(pitname);
             EtGame.instanz.getScreen().setBgColor(getColor(pit.Element("outer_background").Value));
             EtGame.instanz.getScreen().setInnerBackground(getColor(pit.Element("inner_background").Value));

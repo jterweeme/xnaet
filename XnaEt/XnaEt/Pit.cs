@@ -18,6 +18,10 @@ namespace XnaEt
             return null;
         }
 
+        public virtual void setBackground()
+        {
+        }
+
         public Pit(string asset) : base(EtGame.instanz)
         {
             DrawOrder = 9998;
