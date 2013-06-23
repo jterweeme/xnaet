@@ -218,25 +218,25 @@ namespace XnaEt
                 }
                 else
                 {
-                    if(!flightReverse)
+                    if (!flightReverse)
                         currentFrame.X++;
                 }
 
-                if (this.flightReverse && currentFrame.X == 0)
+                if (flightReverse && currentFrame.X == 0)
                 {
                     // Finished with animation
-                    this.freezeeVertical = false;
-                    this.freezeHorizontal = false;
-                    this.flightMode = false;
+                    freezeeVertical = false;
+                    freezeHorizontal = false;
+                    flightMode = false;
 
                     frameSize.Y = 30;
                     flightReverse = false;
-                    this.pos.Y = this.pos.Y + 16;
+                    pos.Y = pos.Y + 16;
                 }
                 else
                 {
                     // Count down if it neccesarry
-                    if(this.flightReverse)
+                    if (flightReverse)
                         currentFrame.X--;
                 }
             }

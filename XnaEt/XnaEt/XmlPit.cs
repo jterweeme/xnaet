@@ -133,7 +133,9 @@ namespace XnaEt
 
             if (gameTime.TotalGameTime - blinkStart < new TimeSpan(0, 0, 1))
             {
+#if DEBUG
                 System.Console.WriteLine(blinkStart);
+#endif
                 sb.Begin();
                 sb.Draw(dot, new Rectangle(blinkRect.X + blinkRect.Width / 2, blinkRect.Y + blinkRect.Height / 2, 14, 4), Color.White);
                 sb.End();

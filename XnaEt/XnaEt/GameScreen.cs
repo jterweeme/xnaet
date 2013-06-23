@@ -178,7 +178,9 @@ namespace XnaEt
                     blieb.Play();
                     player.addPiece(piecePlaces.fetchPieceFrom(currentPit.getNummer()));
                     currentPit.removePiece();
-                    System.Console.Error.WriteLine(piecePlaces);
+#if DEBUG
+                    Console.Error.WriteLine(piecePlaces);
+#endif
                     header.setPieces(player.getItems().Count);
                 }
             }
