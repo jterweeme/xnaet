@@ -11,8 +11,8 @@ namespace XnaEt
     {
         protected Texture2D background;
         Texture2D house;
+        Texture2D player;
         Elliott elliot;
-        Player player;
 
         public EndingScreen() : base(null)
         {
@@ -32,14 +32,13 @@ namespace XnaEt
             background = new Texture2D(GraphicsDevice, 1, 1);
             background.SetData(new Color[] { new Color(0, 28, 136) });
             house = Game.Content.Load<Texture2D>("house");
+            player = Game.Content.Load<Texture2D>("rechts");
 
-            player = new Player();
             elliot = new Elliott();
 
             elliot.Visible = true;
             elliot.endScreen = true;
 
-            EtGame.instanz.Components.Add(player);
             EtGame.instanz.Components.Add(elliot);
         }
 
@@ -49,6 +48,7 @@ namespace XnaEt
             sb.Begin();
             sb.Draw(background, new Rectangle(64, 58, 512, 260), Color.White);
             sb.Draw(house, new Rectangle(64, 58, 512, 260), Color.White);
+            sb.Draw(player, new Rectangle(304, 250, 32, 30), Color.White);
             sb.End();
         }
     }
