@@ -34,6 +34,12 @@ namespace XnaEt
         {
         }
 
+        public void burn()
+        {
+            if (energy > 0)
+                energy--;
+        }
+
         public Player(GameScreen gameScreen) : base(EtGame.instanz)
         {
             this.gameScreen = gameScreen;
@@ -69,29 +75,29 @@ namespace XnaEt
         public override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
-            if (!this.flightMode)
+            if (!flightMode)
             {
                 texture = links;
 
-                if (this.inPit && this.pos.Y < 206 && !this.flightMode)
+                if (inPit && pos.Y < 206 && !flightMode)
                 {
-                    this.pos.Y += 2;
+                    pos.Y += 2;
 
-                    if (!this.freezeeVertical)
-                        this.freezeeVertical = true;
+                    if (!freezeeVertical)
+                        freezeeVertical = true;
 
-                    if (!this.freezeHorizontal)
-                        this.freezeHorizontal = true;
+                    if (!freezeHorizontal)
+                        freezeHorizontal = true;
                 }
                 else
                 {
-                    this.freezeHorizontal = false;
+                    freezeHorizontal = false;
                 }
             }
             else
             {
                 texture = left_neck_up;
-                this.flightAnimate();
+                flightAnimate();
             }
         }
 
@@ -124,7 +130,7 @@ namespace XnaEt
                 for (int i = 0; i < speed; i++)
                 {
                     pos.Y--;
-                    energy--;
+                    burn();
                 }
             }
         }
@@ -135,7 +141,7 @@ namespace XnaEt
             {
                 int speed = (Keyboard.GetState().IsKeyDown(Keys.LeftControl)) ? 3 : 1;
                 texture = links;
-                this.animate(1);
+                animate(1);
                 frameSize.Y = 30;
 
                 for (int i = 0; i < speed; i++)
@@ -143,7 +149,7 @@ namespace XnaEt
                     if (!this.inPit || (this.inPit && pos.X > 130))
                     {
                         pos.X--;
-                        energy--;
+                        burn();
                     }
                 }
             }
@@ -163,7 +169,7 @@ namespace XnaEt
                     if (!this.inPit || (this.inPit && pos.X < 350))
                     {
                         pos.X++;
-                        energy--;
+                        burn();
                     }
                 }
             }
@@ -171,14 +177,14 @@ namespace XnaEt
 
         public void moveDown()
         {
-            if (!this.freezeeVertical)
+            if (!freezeeVertical)
             {
                 int speed = (Keyboard.GetState().IsKeyDown(Keys.LeftControl)) ? 3 : 1;
 
                 for (int i = 0; i < speed; i++)
                 {
                     pos.Y++;
-                    energy--;
+                    burn();
                 }
             }
         }
@@ -199,20 +205,20 @@ namespace XnaEt
         {
             if (animation_count++ % 6 == 0)
             {
-                if (!this.flightReverse && currentFrame.X > 4) 
+                if (!flightReverse && currentFrame.X > 4) 
                 {
-                    if (!this.inPit)
+                    if (!inPit)
                     {
-                        this.flightReverse = true;
+                        flightReverse = true;
                         gameScreen.action();
                     }
 
-                    if (this.freezeeVertical)
-                        this.freezeeVertical = false;
+                    if (freezeeVertical)
+                        freezeeVertical = false;
                 }
                 else
                 {
-                    if(!this.flightReverse)
+                    if(!flightReverse)
                         currentFrame.X++;
                 }
 

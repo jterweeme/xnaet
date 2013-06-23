@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using System.IO;
 
 namespace XnaEt
 {
@@ -8,6 +9,7 @@ namespace XnaEt
         protected int nummer;
         Texture2D dinges;
         SpriteBatch sb;
+        public abstract Pit getNorth();
         public abstract int getZone(Point pos);
         string asset;
 
@@ -46,7 +48,7 @@ namespace XnaEt
         {
             base.LoadContent();
             sb = new SpriteBatch(GraphicsDevice);
-            dinges = Game.Content.Load<Texture2D>(asset);
+            dinges = Texture2D.FromStream(GraphicsDevice, File.OpenRead(asset + ".png"));
         }
 
         public override void Draw(GameTime gameTime)

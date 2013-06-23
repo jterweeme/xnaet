@@ -49,38 +49,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="flowerpit.png">
-      <Name>flowerpit</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="forest.png">
-      <Name>forest</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="olivepit.png">
-      <Name>olivepit</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="snakepit.png">
-      <Name>snakepit</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="tarpit.png">
-      <Name>tarpit</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="city.png">
-      <Name>city</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="title.png">
       <Name>title</Name>
       <Importer>TextureImporter</Importer>
@@ -213,13 +181,6 @@
   <ItemGroup>
     <Compile Include="zoneLeft.png">
       <Name>zoneLeft</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="pitfall.png">
-      <Name>pitfall</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
@@ -424,6 +385,14 @@
       <Importer>TextureImporter</Importer>
       <Processor>FontTextureProcessor</Processor>
       <ProcessorParameters_FirstCharacter>0</ProcessorParameters_FirstCharacter>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="forest.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Name>forest</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />

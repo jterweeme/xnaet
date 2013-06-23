@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Threading;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.GamerServices;
@@ -13,6 +14,7 @@ namespace XnaEt
         public static EtGame instanz;
         GraphicsDeviceManager graphics;
         Screen currentScreen;
+        Debugger debugger;
 
         public Screen getScreen()
         {
@@ -27,12 +29,18 @@ namespace XnaEt
             Components.Add(currentScreen);
         }
 
-        public EtGame()
+        public void setFullScreen()
         {
+            graphics.IsFullScreen = true;
+        }
+
+        public EtGame(bool fullscreen = false)
+        {
+            debugger = new Debugger();
             graphics = new GraphicsDeviceManager(this);
             graphics.PreferredBackBufferWidth = 640;
             graphics.PreferredBackBufferHeight = 480;
-            //graphics.IsFullScreen = true;
+            graphics.IsFullScreen = fullscreen;
             Content.RootDirectory = "Content";
         }
 

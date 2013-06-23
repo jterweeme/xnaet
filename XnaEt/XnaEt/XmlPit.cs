@@ -41,6 +41,11 @@ namespace XnaEt
             EtGame.instanz.getScreen().setInnerBackground(getColor(pit.Element("inner_background").Value));
         }
 
+        public override Pit getNorth()
+        {
+            return getPit("north");
+        }
+
         public override int getZone(Point pos)
         {
             return zones.getZone(pos);
@@ -65,8 +70,13 @@ namespace XnaEt
             IEnumerable<XElement> pit = world.getPits(pitname);
 
             foreach (XElement pitfall in pit.Elements("pitfall"))
+            {
                 if (checkOnPit(pitfall, playerBox))
-                    Console.WriteLine(getRect(pitfall));
+                {
+                    string id = pitfall.Attribute("id").Value;
+                    return Convert.ToInt16(id.Substring(1));
+                }
+            }
 
             return -1;
         }

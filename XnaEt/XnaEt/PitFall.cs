@@ -20,6 +20,11 @@ namespace XnaEt
             this.nummer = nummer;
         }
 
+        public override Pit getNorth()
+        {
+            return originalPit;
+        }
+
         protected override void LoadContent()
         {
             base.LoadContent();

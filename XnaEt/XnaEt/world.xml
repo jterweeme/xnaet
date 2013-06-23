@@ -28,30 +28,10 @@
     <west ref="olivepit"></west>
     <east ref="snakepit"></east>
     <south ref="city"></south>
-    <pitfall id="p5">
-      <x>48</x>
-      <y>48</y>
-      <w>160</w>
-      <h>40</h>
-    </pitfall>
-    <pitfall id="p6">
-      <x>304</x>
-      <y>48</y>
-      <w>160</w>
-      <h>40</h>
-    </pitfall>
-    <pitfall id="p7">
-      <x>48</x>
-      <y>176</y>
-      <w>160</w>
-      <h>40</h>
-    </pitfall>
-    <pitfall id="p8">
-      <x>304</x>
-      <y>176</y>
-      <w>160</w>
-      <h>40</h>
-    </pitfall>
+    <pitfall id="p5"><x>48</x><y>48</y><w>160</w><h>40</h></pitfall>
+    <pitfall id="p6"><x>304</x><y>48</y><w>160</w><h>40</h></pitfall>
+    <pitfall id="p7"><x>48</x><y>176</y><w>160</w><h>40</h></pitfall>
+    <pitfall id="p8"><x>304</x><y>176</y><w>160</w><h>40</h></pitfall>
   </pit>
   <pit id="snakepit">
     <outer_background>#004400</outer_background>
@@ -60,6 +40,14 @@
     <west ref="flowerpit"></west>
     <east ref="tarpit"></east>
     <south ref="city"></south>
+    <pitfall id="p9"><x>0</x><y>36</y><w>80</w><h>28</h></pitfall>
+    <pitfall id="p10"><x>176</x><y>36</y><w>160</w><h>28</h></pitfall>
+    <pitfall id="p11"><x>432</x><y>36</y><w>80</w><h>28</h></pitfall>
+    <pitfall id="p12"><x>64</x><y>116</y><w>128</w><h>32</h></pitfall>
+    <pitfall id="p13"><x>320</x><y>116</y><w>128</w><h>32</h></pitfall>
+    <pitfall id="p14"><x>0</x><y>200</y><w>80</w><h>28</h></pitfall>
+    <pitfall id="p15"><x>176</x><y>200</y><w>160</w><h>28</h></pitfall>
+    <pitfall id="p16"><x>432</x><y>200</y><w>80</w><h>28</h></pitfall>
   </pit>
   <pit id="tarpit">
     <outer_background>#004400</outer_background>
@@ -68,30 +56,10 @@
     <west ref="snakepit"></west>
     <east ref="olivepit"></east>
     <south ref="city"></south>
-    <pitfall id="p17">
-      <x>48</x>
-      <y>48</y>
-      <w>160</w>
-      <h>40</h>
-    </pitfall>
-    <pitfall id="p18">
-      <x>304</x>
-      <y>48</y>
-      <w>160</w>
-      <h>40</h>
-    </pitfall>
-    <pitfall id="p19">
-      <x>48</x>
-      <y>176</y>
-      <w>160</w>
-      <h>40</h>
-    </pitfall>
-    <pitfall id="p20">
-      <x>304</x>
-      <y>176</y>
-      <w>160</w>
-      <h>40</h>
-    </pitfall>
+    <pitfall id="p17"><x>48</x><y>48</y><w>160</w><h>40</h></pitfall>
+    <pitfall id="p18"><x>208</x><y>70</y><w>96</w><h>28</h></pitfall>
+    <pitfall id="p19"><x>208</x><y>168</y><w>96</w><h>28</h></pitfall>
+    <pitfall id="p20"><x>304</x><y>176</y><w>160</w><h>40</h></pitfall>
   </pit>
   <pit id="city">
     <outer_background>#000060</outer_background>
