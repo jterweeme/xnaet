@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Audio;
 
 namespace XnaEt
 {
@@ -13,6 +14,7 @@ namespace XnaEt
         private SpriteBatch sb;
         int clockCount;
         TimeSpan clockStart;
+        SoundEffect tick;
 
         public Clock(EtGame etGame) : base(etGame)
         {
@@ -30,6 +32,7 @@ namespace XnaEt
         protected override void LoadContent()
         {
             base.LoadContent();
+            tick = Game.Content.Load<SoundEffect>("clocktick");
             textures.Add(Game.Content.Load<Texture2D>("pieces0"));
             textures.Add(Game.Content.Load<Texture2D>("clock2"));
             textures.Add(Game.Content.Load<Texture2D>("clock2"));
@@ -62,8 +65,11 @@ namespace XnaEt
                 System.Console.WriteLine(verlopenTijdSec);
                 int remaining = 8 - verlopenTijdSec;
 
-                if (remaining >= 0)
+                if (remaining >= 0 /*&& remaining != clockCount*/)
+                {
                     clockCount = remaining;
+                    //tick.Play();
+                }
             }
         }
 
