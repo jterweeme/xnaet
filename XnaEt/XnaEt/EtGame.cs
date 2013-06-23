@@ -14,7 +14,7 @@ namespace XnaEt
         public static EtGame instanz;
         GraphicsDeviceManager graphics;
         Screen currentScreen;
-        Debugger debugger;
+        //Debugger debugger;
         World world;
 
         public Screen getScreen()

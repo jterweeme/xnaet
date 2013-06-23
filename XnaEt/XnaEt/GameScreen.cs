@@ -31,7 +31,7 @@ namespace XnaEt
             Game.Components.Add(pit);
         }
 
-        public void action()
+        public void action(GameTime gameTime)
         {
             sndAction.Play();
             switch (currentPit.getZone(player.getPos()))
@@ -51,12 +51,12 @@ namespace XnaEt
                 case Zones.CALLSHIP:
 
                     if (player.getItems().Count == 3)
-                        header.setClock(8);
+                        header.getClock2().start(gameTime.TotalGameTime);
 
                     break;
                 case Zones.LANDING:
 
-                    if (header.getClock() > 0)
+                    if (header.getClock2().getCount() > 0)
                         EtGame.instanz.setScreen(new EndingScreen());
 
                     break;
@@ -102,11 +102,11 @@ namespace XnaEt
         public override void removeContent()
         {
             base.removeContent();
-            EtGame.instanz.Components.Remove(player);
-            EtGame.instanz.Components.Remove(currentPit);
-            EtGame.instanz.Components.Remove(agent);
-            EtGame.instanz.Components.Remove(elliot);
-            EtGame.instanz.Components.Remove(scientist);
+            theGame.Components.Remove(player);
+            theGame.Components.Remove(currentPit);
+            theGame.Components.Remove(agent);
+            theGame.Components.Remove(elliot);
+            theGame.Components.Remove(scientist);
         }
 
         private void goNorth()

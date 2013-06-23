@@ -97,7 +97,7 @@ namespace XnaEt
             else
             {
                 texture = left_neck_up;
-                flightAnimate();
+                flightAnimate(gameTime);
             }
         }
 
@@ -201,7 +201,7 @@ namespace XnaEt
                     currentFrame.X = 0;
         }
 
-        private void flightAnimate()
+        private void flightAnimate(GameTime gameTime)
         {
             if (animation_count++ % 6 == 0)
             {
@@ -210,7 +210,7 @@ namespace XnaEt
                     if (!inPit)
                     {
                         flightReverse = true;
-                        gameScreen.action();
+                        gameScreen.action(gameTime);
                     }
 
                     if (freezeeVertical)

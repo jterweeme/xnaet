@@ -28,11 +28,13 @@ namespace XnaEt
         }
 
         public void setBgColor(Color color)
-        {   outerBackground.SetData(new Color[] { color });
+        {
+            outerBackground.SetData(new Color[] { color });
         }
 
         public void setInnerBackground(Color color)
-        {   innerBackground.SetData(new Color[] { color });
+        {
+            innerBackground.SetData(new Color[] { color });
         }
 
         public override void Draw(GameTime gameTime)
@@ -46,7 +48,7 @@ namespace XnaEt
 
         public override void Initialize()
         {
-            header = new Header();
+            header = new Header(EtGame.instanz);
             footer = new Footer();
             EtGame.instanz.Components.Add(header);
             EtGame.instanz.Components.Add(footer);
