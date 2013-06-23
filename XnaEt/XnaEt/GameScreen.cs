@@ -91,11 +91,11 @@ namespace XnaEt
             elliot = new Elliott();
             scientist = new Scientist();
             sndAction = Game.Content.Load<SoundEffect>("action");
-            EtGame.instanz.Components.Add(player);
-            EtGame.instanz.Components.Add(currentPit);
-            EtGame.instanz.Components.Add(agent);
-            EtGame.instanz.Components.Add(elliot);
-            EtGame.instanz.Components.Add(scientist);
+            theGame.Components.Add(player);
+            theGame.Components.Add(currentPit);
+            theGame.Components.Add(agent);
+            theGame.Components.Add(elliot);
+            theGame.Components.Add(scientist);
         }
 
         public override void removeContent()
