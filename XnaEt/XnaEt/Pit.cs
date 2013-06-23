@@ -22,6 +22,7 @@ namespace XnaEt
         {
             DrawOrder = 9998;
             this.asset = asset;
+            //dinges = new Texture2D(GraphicsDevice, 512, 260);
         }
 
         public int getNummer()

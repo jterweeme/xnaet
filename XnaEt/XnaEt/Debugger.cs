@@ -8,13 +8,16 @@ namespace XnaEt
 {
     public class Debugger
     {
-        public Debugger()
+        EtGame etGame;
+
+        public Debugger(EtGame etGame)
         {
+            this.etGame = etGame;
             Thread thread = new Thread(new ThreadStart(Maine));
             thread.Start();
         }
 
-        public static void Maine()
+        public void Maine()
         {
             while (true)
             {
@@ -24,7 +27,7 @@ namespace XnaEt
                     Environment.Exit(0);
 
                 if (Console.ReadLine().Equals("fullscreen"))
-                    EtGame.instanz.setFullScreen();
+                    etGame.setFullScreen();
             }
         }
     }

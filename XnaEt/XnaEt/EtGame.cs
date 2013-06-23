@@ -15,10 +15,16 @@ namespace XnaEt
         GraphicsDeviceManager graphics;
         Screen currentScreen;
         Debugger debugger;
+        World world;
 
         public Screen getScreen()
         {
             return currentScreen;
+        }
+
+        public World getWorld()
+        {
+            return world;
         }
 
         public void setScreen(Screen screen)
@@ -31,12 +37,14 @@ namespace XnaEt
 
         public void setFullScreen()
         {
+            System.Console.Error.WriteLine("going fullscreen");
             graphics.IsFullScreen = true;
         }
 
         public EtGame(bool fullscreen = false)
         {
-            debugger = new Debugger();
+            
+            debugger = new Debugger(this);
             graphics = new GraphicsDeviceManager(this);
             graphics.PreferredBackBufferWidth = 640;
             graphics.PreferredBackBufferHeight = 480;
@@ -46,6 +54,8 @@ namespace XnaEt
 
         protected override void Initialize()
         {
+            world = new World();
+            System.Console.Error.WriteLine(world);
             currentScreen = new SplashScreen();
             Components.Add(currentScreen);
             base.Initialize();      

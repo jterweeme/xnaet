@@ -85,5 +85,10 @@ namespace XnaEt
         {
             return checkCollision(playerBox) ? whichPit(playerBox) : -1;
         }
+
+        public override string ToString()
+        {
+            return pitname;
+        }
     }
 }

@@ -132,6 +132,7 @@
     <Compile Include="Scientist.cs" />
     <Compile Include="Screen.cs" />
     <Compile Include="SplashScreen.cs" />
+    <Compile Include="World.cs" />
     <Compile Include="WorldElement.cs" />
     <Compile Include="XmlPit.cs" />
     <Compile Include="Zones.cs" />

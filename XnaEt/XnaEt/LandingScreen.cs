@@ -15,7 +15,7 @@ namespace XnaEt
         int spaceshipY;
         int counter;
 
-        public LandingScreen() : base(null)
+        public LandingScreen() : base(EtGame.instanz)
         {
             spaceshipY = 10;
             counter = 0;

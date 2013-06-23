@@ -10,9 +10,9 @@ namespace XnaEt
         protected Texture2D outerBackground;
         protected Texture2D innerBackground;
         protected SpriteBatch sb;
-        protected Game theGame;
+        protected EtGame theGame;
 
-        public Screen(Game theGame) : base(EtGame.instanz)
+        public Screen(EtGame theGame) : base(EtGame.instanz)
         {
             this.theGame = theGame;
         }

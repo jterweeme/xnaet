@@ -19,7 +19,7 @@ namespace XnaEt
         bool ctrlKeyActive = false;
         
 
-        public GameScreen(Game theGame) : base(theGame)
+        public GameScreen(EtGame theGame) : base(theGame)
         {
             piecePlaces = new PiecePlaces();
         }
@@ -86,7 +86,7 @@ namespace XnaEt
             base.LoadContent();
             sb = new SpriteBatch(GraphicsDevice);
             player = new Player(this);
-            currentPit = new XmlPit();
+            currentPit = theGame.getWorld().getPit(0);
             agent = new Agent();
             elliot = new Elliott();
             scientist = new Scientist();
