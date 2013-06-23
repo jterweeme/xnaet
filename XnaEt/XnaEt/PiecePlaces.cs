@@ -27,6 +27,11 @@ namespace XnaEt
             }
         }
 
+        public bool hasPiece(int pitfall)
+        {
+            return (piecePlaatsen[pitfall - 1] > 0);
+        }
+
         public Piece getPieceFromPlace(int pitfall)
         {
             switch (piecePlaatsen[pitfall - 1])

@@ -70,6 +70,7 @@ namespace XnaEt
 
                 case Zones.PHONE_LOCATION:
                     Console.Error.WriteLine(piecePlaces);
+                    currentPit.blink(piecePlaces);
                     break;
             }
         }

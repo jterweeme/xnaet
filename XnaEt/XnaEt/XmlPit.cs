@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using System.Linq;
 using System.Xml.Linq;
 using System.Collections.Generic;
@@ -11,6 +12,10 @@ namespace XnaEt
         static Zones zones;
         WorldElement world;
         string pitname;
+        TimeSpan blinkStart;
+        Rectangle blinkRect;
+        GameTime currentGameTime;
+        
 
         public XmlPit(string pitname = "forest") : base(pitname)
         {
@@ -49,6 +54,24 @@ namespace XnaEt
         public override Pit getNorth()
         {
             return getPit("north");
+        }
+
+        public override void blink(PiecePlaces piecePlaces)
+        {
+            XElement pit = world.getPitElement(pitname);
+
+            foreach (XElement pitfall in pit.Elements("pitfall"))
+            {
+                string id = pitfall.Attribute("id").Value;
+                int nr = Convert.ToInt16(id.Substring(1));
+
+                if (piecePlaces.hasPiece(nr))
+                {
+                    blinkRect = getRect(pitfall);
+                    blinkStart = currentGameTime.TotalGameTime;
+
+                }
+            }
         }
 
         public override int getZone(Point pos)
@@ -94,6 +117,27 @@ namespace XnaEt
         public override string ToString()
         {
             return pitname;
+        }
+
+        public override void Update(GameTime gameTime)
+        {
+            base.Update(gameTime);
+            currentGameTime = gameTime;
+        }
+
+        public override void Draw(GameTime gameTime)
+        {
+            base.Draw(gameTime);
+            Texture2D dot = new Texture2D(GraphicsDevice, 1, 1);
+            dot.SetData(new Color[] { Color.Coral });
+
+            if (gameTime.TotalGameTime - blinkStart < new TimeSpan(0, 0, 1))
+            {
+                System.Console.WriteLine(blinkStart);
+                sb.Begin();
+                sb.Draw(dot, new Rectangle(blinkRect.X + blinkRect.Width / 2, blinkRect.Y + blinkRect.Height / 2, 14, 4), Color.White);
+                sb.End();
+            }
         }
     }
 }

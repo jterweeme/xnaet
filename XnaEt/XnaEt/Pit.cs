@@ -8,10 +8,14 @@ namespace XnaEt
     {
         protected int nummer;
         Texture2D dinges;
-        SpriteBatch sb;
+        protected SpriteBatch sb;
         public abstract Pit getNorth();
         public abstract int getZone(Point pos);
         string asset;
+
+        public virtual void blink(PiecePlaces piecePlaces)
+        {
+        }
 
         public virtual Pit getPit(string direction)
         {
