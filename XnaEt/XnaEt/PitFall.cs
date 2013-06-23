@@ -22,6 +22,9 @@ namespace XnaEt
 
         public override Pit getNorth()
         {
+            if (piece != null)
+                EtGame.instanz.Components.Remove(piece);
+
             return originalPit;
         }
 
